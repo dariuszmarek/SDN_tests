@@ -3,6 +3,7 @@ import json
 import shutil 
 import pathlib
 import time
+
 KEY_INSTALL = "Install"
 KEY_INSTALL_SERVER = "server"
 KEY_INSTALL_CLIENT = "client"
@@ -277,7 +278,7 @@ def get_client(server, client_id):
                 openvpn_server_client = client
     return openvpn_server_client
 
-def generate_client_file(nodes, node_id, server_name, client_id):
+def generate_client_file(nodes, node_id, server_name, client_id, connect=True):
     node = get_node(nodes, node_id)
     if node:
         server = get_openvpn_server(node,server_name)
@@ -348,6 +349,9 @@ def generate_client_file(nodes, node_id, server_name, client_id):
 
                 run_command("sudo openvpn --mktun --dev {}".format(client_dev_name))
                 run_command('sudo ifconfig {} up'.format(client_dev_name))
+
+                if connect:
+                    run_command('sudo openvpn --config {}'.format(out_filename))
 
 
 
