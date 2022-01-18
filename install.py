@@ -289,7 +289,7 @@ def generate_client_file(nodes, node_id, server_name, client_id):
                 if not server_ip:
                     server_ip = get_key_if_exists(server,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_IP)
                     if not server_ip:
-                        server_ip = get_key_if_exists(server,KEY_NODES_NODE_IP)
+                        server_ip = get_key_if_exists(node,KEY_NODES_NODE_IP)
 
                 
                 server_port = get_key_if_exists(client,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_CLIENTS_CLIENT_PORT)
