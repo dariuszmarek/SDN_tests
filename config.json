@@ -1,0 +1,123 @@
+{
+    "Install": "",
+    "Nodes": [
+        {
+            "id": 1,
+            "name": "de1",
+            "description": "node de1",
+            "ip": "135.125.245.136",
+            "openvpn": {
+                "clients": [
+                    {
+                        "name": "client_de1",
+                        "dev-name": "tap1",
+                        "dev-type": "tap",
+                        "ip": "135.125.245.136",
+                        "port": 1190,
+                        "proto": "udp",
+                        "files": [
+                            {
+                                "key": "ca",
+                                "file-dir": "client_data/ca.crt"
+                            },
+                            {
+                                "key": "cert",
+                                "file-dir": "client_data/c.cert"
+                            },
+                            {
+                                "key": "key",
+                                "file-dir": "client_data/c.key"
+                            },
+                            {
+                                "key": "tls-crypt",
+                                "file-dir": "client_data/tc.key"
+                            }
+                        ],
+                        "base-conf": "client_data/base-client.ovpn"
+                    }
+                ],
+                "servers": [
+                    {
+                        "name": "tapssde1",
+                        "dev-name": "tapssde1",
+                        "dev-type": "tap",
+                        "ip": "135.125.245.136",
+                        "port": 1190,
+                        "proto": "udp",
+                        "server-bridge": {
+                            "ip": "10.10.2.11",
+                            "mask": "255.255.255.0",
+                            "ip-min": "10.10.2.10",
+                            "ip-max": "10.10.2.30"
+                        },
+                        "files": [
+                            {
+                                "key": "ca",
+                                "file": "ca.crt",
+                                "file-dir": "server_data/ca.crt"
+                            },
+                            {
+                                "key": "cert",
+                                "file": "server.crt",
+                                "file-dir": "server_data/server.crt"
+                            },
+                            {
+                                "key": "key",
+                                "file": "server.key",
+                                "file-dir": "server_data/server.key"
+                            },
+                            {
+                                "key": "tls-crypt",
+                                "file": "tc.key",
+                                "file-dir": "server_data/tc.key"
+                            },
+                            {
+                                "key": "crl-verify",
+                                "file": "crl.pem",
+                                "file-dir": "server_data/crl.pem"
+                            },
+                            {
+                                "key": "dh",
+                                "file": "dh.pem",
+                                "file-dir": "server_data/dh.pem"
+                            },
+                            {
+                                "key": "ifconfig-pool-persist",
+                                "file": "ipp.txt",
+                                "file-dir": "server_data/ipp.txt"
+                            }
+                        ],
+                        "base-conf": "server_data/base-sever.conf"
+                    }
+                ]
+            },
+            "openvswitch": {
+                "bridges": [
+                    {
+                        "name": "ovs-br",
+                        "ip": "10.10.2.11",
+                        "mask": "255.255.255.0",
+                        "controller": {
+                            "ip": "146.59.243.170",
+                            "port": "6653",
+                            "type": "tcp"
+                        },
+                        "gateway": {
+                            "enable": true,
+                            "network": "ens3"
+                        },
+                        "networks": [
+                            {
+                                "name": "tapssde1"
+                            },
+                            {
+                                "name": "tapde1"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {}
+    ]
+}
