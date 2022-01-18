@@ -226,10 +226,11 @@ def set_openvpn_servers(node, openvpn):
             
             # Start openvpn
             # run_command("sudo openvpn --rmtun --dev {}".format(server_name))
+            run_command("sudo openvpn --mktun --dev {}".format(server_name))
+            
             time.sleep(3)
             print("Waiting for configuration - 3s")
             
-            run_command("sudo openvpn --mktun --dev {}".format(server_name))
             run_command("sudo systemctl enable --now openvpn-{}@{}.service".format(OPENVPN_SERVER_DIR, server_name))
             run_command("sudo systemctl start openvpn-{}@{}.service".format(OPENVPN_SERVER_DIR, server_name))
 
@@ -287,6 +288,9 @@ def generate_client_file(nodes, node_id, server_name, client_id):
                 server_ip = get_key_if_exists(client,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_CLIENTS_CLIENT_IP)
                 if not server_ip:
                     server_ip = get_key_if_exists(server,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_IP)
+                    if not server_ip:
+                        server_ip = get_key_if_exists(server,KEY_NODES_NODE_IP)
+
                 
                 server_port = get_key_if_exists(client,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_CLIENTS_CLIENT_PORT)
                 if not server_port:
