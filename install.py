@@ -3,8 +3,6 @@ import json
 import shutil 
 import pathlib
 
-from sympy import true
-
 KEY_INSTALL = "Install"
 KEY_INSTALL_SERVER = "server"
 KEY_INSTALL_CLIENT = "client"
