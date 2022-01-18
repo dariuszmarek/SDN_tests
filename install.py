@@ -219,9 +219,9 @@ def set_openvpn_servers(node, openvpn):
                 to_push = server_push.split(";")
                 for p in to_push:
                     if PRINT_ONLY:
-                        print("push {}\n".format(p))
+                        print("push \"{}\"\n".format(p))
                     else:
-                        server_file.write("push {}\n".format(p))
+                        server_file.write("push \"{}\"\n".format(p))
 
             
             # Start openvpn
