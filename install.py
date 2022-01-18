@@ -69,7 +69,6 @@ OPENVPN_BASIC_CIENT_NAME = "client"
 PRINT_ONLY = False
 
 def run_command(command):
-    print(command)
     if PRINT_ONLY:
         print(command)
     else:
@@ -234,8 +233,6 @@ def set_openvpn_servers(node, openvpn):
             run_command("sudo openvpn --mktun --dev {}".format(server_name))
             run_command('sudo ifconfig {} 0.0.0.0 promisc up'.format(server_name))
             
-            time.sleep(10)
-
             run_command("sudo systemctl enable --now openvpn-{}@{}.service".format(OPENVPN_SERVER_DIR, server_name))
             run_command("sudo systemctl start openvpn-{}@{}.service".format(OPENVPN_SERVER_DIR, server_name))
 
@@ -350,9 +347,9 @@ def generate_client_file(nodes, node_id, server_name, client_id, connect=True):
                 run_command("sudo openvpn --mktun --dev {}".format(client_dev_name))
                 run_command('sudo ifconfig {} up'.format(client_dev_name))
 
-                if connect:
-                    run_command('sudo openvpn --config {}'.format(out_filename))
-
+               
+                print('To connect vpn client run: sudo openvpn --config {}'.format(out_filename))
+                print("After connection run this script again with -o flag to recreate bridge")
 
 
 
