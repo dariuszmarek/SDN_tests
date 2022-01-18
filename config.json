@@ -5,7 +5,7 @@
             "id": 1,
             "name": "de1",
             "description": "node de1",
-            "ip": "135.125.245.136",
+            "ip": "51.83.255.114",
             "openvpn": {
                 "clients": [
                     {
@@ -41,7 +41,7 @@
                         "name": "tapssde1",
                         "dev-name": "tapssde1",
                         "dev-type": "tap",
-                        "ip": "135.125.245.136",
+                        "ip": "51.83.255.114",
                         "port": 1190,
                         "proto": "udp",
                         "server-bridge": {
