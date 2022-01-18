@@ -343,6 +343,9 @@ def generate_client_file(nodes, node_id, server_name, client_id):
                         client_file.write("</{}>\n".format(files[0]))
 
 
+                run_command("sudo openvpn --config {} &".format(out_filename))
+
+
 
 
 def generate_clients_files_for_server(nodes, openvpn):
