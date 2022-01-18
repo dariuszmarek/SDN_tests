@@ -377,10 +377,10 @@
                         },
                         "networks": [
                             {
-                                "name": "tapssnode1"
+                                "name": "tapssnode2"
                             },
                             {
-                                "name": "tapcsnode1"
+                                "name": "tapcsnode2"
                             }
                         ]
                     }
