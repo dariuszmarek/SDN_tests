@@ -2,7 +2,7 @@ import os
 import json
 import shutil 
 import pathlib
-
+import time
 KEY_INSTALL = "Install"
 KEY_INSTALL_SERVER = "server"
 KEY_INSTALL_CLIENT = "client"
@@ -226,6 +226,9 @@ def set_openvpn_servers(node, openvpn):
             
             # Start openvpn
             # run_command("sudo openvpn --rmtun --dev {}".format(server_name))
+            time.sleep(3)
+            print("Waiting for configuration - 3s")
+            
             run_command("sudo openvpn --mktun --dev {}".format(server_name))
             run_command("sudo systemctl enable --now openvpn-{}@{}.service".format(OPENVPN_SERVER_DIR, server_name))
             run_command("sudo systemctl start openvpn-{}@{}.service".format(OPENVPN_SERVER_DIR, server_name))
