@@ -232,6 +232,8 @@ def set_openvpn_servers(node, openvpn):
             run_command("sudo openvpn --mktun --dev {}".format(server_name))
             run_command('sudo ifconfig {} 0.0.0.0 promisc up'.format(server_name))
             
+            time.sleep(3)
+            
             run_command("sudo systemctl enable --now openvpn-{}@{}.service".format(OPENVPN_SERVER_DIR, server_name))
             run_command("sudo systemctl start openvpn-{}@{}.service".format(OPENVPN_SERVER_DIR, server_name))
 
@@ -343,7 +345,9 @@ def generate_client_file(nodes, node_id, server_name, client_id):
                         client_file.write("</{}>\n".format(files[0]))
 
 
-                run_command("sudo openvpn --config {} &".format(out_filename))
+                run_command("sudo openvpn --mktun --dev {}".format(client_dev_name))
+                run_command('sudo ifconfig {} up'.format(client_dev_name))
+
 
 
 
@@ -364,7 +368,7 @@ parser = argparse.ArgumentParser(description='openvswitch & openvpn')
 parser.add_argument('-i', action='store', type=int, help='pc id')
 parser.add_argument('-o', action='store_true', help='set openvswitch')
 parser.add_argument('-s', action='store_true', help='set openvpn server & generate client files to connect')
-parser.add_argument('-c', action='store', nargs=3, help='generate openvpn client file to node id, server name, client id')
+parser.add_argument('-c', action='store', nargs=3, help='generate openvpn client file to node id, server name, client id & create dev')
 parser.add_argument('-f', action='store', help='config file',required=True)
 parser.add_argument('-icp', action='store_true', help='install clients packages from config file')
 parser.add_argument('-isp', action='store_true', help='install servers packages from config file')
