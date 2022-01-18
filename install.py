@@ -236,6 +236,9 @@ def set_openvpn_servers(node, openvpn):
             time.sleep(3)
 
             run_command("sudo systemctl enable --now openvpn-{}@{}.service".format(OPENVPN_SERVER_DIR, server_name))
+
+            time.sleep(3)
+
             run_command("sudo systemctl start openvpn-{}@{}.service".format(OPENVPN_SERVER_DIR, server_name))
 
 def get_json(filename):
