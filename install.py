@@ -47,6 +47,7 @@ KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_BASE_CONF = "base-conf"
 KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_CLIENTS = "clients"
 KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_CLIENTS_CLIENT_ID = "id"
 KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_CLIENTS_CLIENT_IP = "ip"
+KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_CLIENTS_CLIENT_DEV_NAME = "dev-name"
 KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_CLIENTS_CLIENT_PORT = "port"
 KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_CLIENTS_CLIENT_FILES = "files"
 KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_CLIENTS_CLIENT_FILES_KEY = "key"
@@ -298,10 +299,10 @@ def generate_client_file(nodes, node_id, server_name, client_id):
                 
                 client_proto = get_key_if_exists(server,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_PROTO)
                 client_files = get_key_if_exists(client,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_CLIENTS_CLIENT_FILES)
-                server_dev_name = get_key_if_exists(server,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_DEV_NAME)
+                client_dev_name = get_key_if_exists(client,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_DEV_NAME)
 
                 data_to_file.append("client")
-                data_to_file.append("dev {}{}{}".format(server_dev_name, OPENVPN_BASIC_CIENT_NAME, client_id))
+                data_to_file.append("dev {}".format(client_dev_name))
                 data_to_file.append("proto {}".format(client_proto))
                 data_to_file.append("remote {} {}".format(server_ip, server_port))
 

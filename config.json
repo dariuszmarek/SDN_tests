@@ -68,6 +68,7 @@
                         "base-conf": "server_data/base-sever.conf",
                         "clients": [{
                             "id": 1,
+                            "dev-name": "tapssn1c1",
                             "files": [
                                 {
                                     "key": "ca",
@@ -143,6 +144,7 @@
                         "base-conf": "server_data/base-sever.conf",
                         "clients": [{
                             "id": 1,
+                            "dev-name": "tapcsn1c1",
                             "files": [
                                 {
                                     "key": "ca",
@@ -187,6 +189,9 @@
                             },
                             {
                                 "name": "tapcsnode1"
+                            },
+                            {
+                                "name": "tapssn2c1"
                             }
                         ]
                     }
@@ -262,6 +267,7 @@
                         "base-conf": "server_data/base-sever.conf",
                         "clients": [{
                             "id": 1,
+                            "dev-name": "tapssn2c1",
                             "files": [
                                 {
                                     "key": "ca",
@@ -337,6 +343,7 @@
                         "base-conf": "server_data/base-sever.conf",
                         "clients": [{
                             "id": 1,
+                            "dev-name": "tapcsn2c1",
                             "files": [
                                 {
                                     "key": "ca",
