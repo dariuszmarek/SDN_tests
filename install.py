@@ -233,12 +233,9 @@ def set_openvpn_servers(node, openvpn):
             run_command("sudo openvpn --mktun --dev {}".format(server_name))
             run_command('sudo ifconfig {} 0.0.0.0 promisc up'.format(server_name))
             
-            time.sleep(3)
+            time.sleep(10)
 
             run_command("sudo systemctl enable --now openvpn-{}@{}.service".format(OPENVPN_SERVER_DIR, server_name))
-
-            time.sleep(3)
-
             run_command("sudo systemctl start openvpn-{}@{}.service".format(OPENVPN_SERVER_DIR, server_name))
 
 def get_json(filename):
