@@ -316,7 +316,7 @@ def generate_client_file(nodes, node_id, server_name, client_id, connect=True):
                             files_to_write.append((client_file_key, client_file_file_dir))
 
                 # Configuration
-                out_filename = "{}{}.ovpn".format(OPENVPN_BASIC_CIENT_NAME, client_id)
+                out_filename = "{}{}{}.ovpn".format(OPENVPN_BASIC_CIENT_NAME, server_name, client_id)
 
                 client_base_conf = get_key_if_exists(client,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_CLIENTS_CLIENT_BASE_CONF)
                 
@@ -383,6 +383,20 @@ if args.f:
     json_data = get_json(args.f)
     nodes = get_nodes(json_data)
 
+
+if json_data and (args.icp or args.isp):
+    install = get_key_if_exists(json_data,KEY_INSTALL)
+    packages = None
+    if args.icp and install:
+        packages = get_key_if_exists(install,KEY_INSTALL_CLIENT)
+
+    if args.isp and install:
+        packages = get_key_if_exists(install,KEY_INSTALL_SERVER)
+
+    if packages:
+        run_command("sudo apt install -y {}".format(packages))
+
+
 if args.i and nodes:
     node = get_node(nodes, args.i)
 
@@ -398,15 +412,4 @@ if args.o and node:
 if args.c and json_data and len(args.c) > 2:
      generate_client_file(get_nodes(json_data), int(args.c[0]), args.c[1], int(args.c[2]))
 
-if args.icp or  args.isp:
-    install = get_key_if_exists(json_data,KEY_INSTALL)
-    packages = None
-    if args.icp and install:
-        packages = get_key_if_exists(install,KEY_INSTALL_CLIENT)
-
-    if args.isp and install:
-        packages = get_key_if_exists(install,KEY_INSTALL_SERVER)
-
-    if packages:
-        run_command("sudo apt install -y {}".format(packages))
 
