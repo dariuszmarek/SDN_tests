@@ -317,7 +317,7 @@ def generate_client_file(nodes, node_id, server_name, client_id, device_name, co
                             files_to_write.append((client_file_key, client_file_file_dir))
 
                 # Configuration
-                out_filename = "{}{}{}.ovpn".format(OPENVPN_BASIC_CIENT_NAME, server_name, client_id)
+                out_filename = "{}_{}_{}.ovpn".format(OPENVPN_BASIC_CIENT_NAME, server_name, client_id)
 
                 client_base_conf = get_key_if_exists(client,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_CLIENTS_CLIENT_BASE_CONF)
                 
