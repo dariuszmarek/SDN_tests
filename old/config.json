@@ -1,0 +1,398 @@
+{
+    "Install": {
+        "client": "openvpn",
+        "server": "openvpn openssl iptables openvswitch-switch net-tools nmap traceroute"
+    },
+    "Nodes": [
+        {
+            "id": 1,
+            "ip": "51.83.255.114",
+            "openvpn": {
+                "clients": [
+                    {
+                        "node-id": 2,
+                        "server-name": "tapssnode2",
+                        "client-id": 1
+                    }
+                ],
+                "servers": [
+                    {
+                        "name": "tapssnode1",
+                        "dev-name": "tapssnode1",
+                        "dev-type": "tap",
+                        "port": 1190,
+                        "proto": "udp",
+                        "server-bridge": {
+                            "ip": "10.10.2.11",
+                            "mask": "255.255.255.0",
+                            "ip-min": "10.10.2.10",
+                            "ip-max": "10.10.2.30"
+                        },
+                        "files": [
+                            {
+                                "key": "ca",
+                                "file": "ca.crt",
+                                "file-dir": "server_data/server1/ca.crt"
+                            },
+                            {
+                                "key": "cert",
+                                "file": "server.crt",
+                                "file-dir": "server_data/server1/server.crt"
+                            },
+                            {
+                                "key": "key",
+                                "file": "server.key",
+                                "file-dir": "server_data/server1/server.key"
+                            },
+                            {
+                                "key": "tls-crypt",
+                                "file": "tc.key",
+                                "file-dir": "server_data/server1/tc.key"
+                            },
+                            {
+                                "key": "crl-verify",
+                                "file": "crl.pem",
+                                "file-dir": "server_data/server1/crl.pem"
+                            },
+                            {
+                                "key": "dh",
+                                "file": "dh.pem",
+                                "file-dir": "server_data/server1/dh.pem"
+                            },
+                            {
+                                "key": "ifconfig-pool-persist",
+                                "file": "ipp.txt",
+                                "file-dir": "server_data/server1/ipp.txt"
+                            }
+                        ],
+                        "base-conf": "server_data/base-sever.conf",
+                        "clients": [{
+                            "id": 1,
+                            "dev-name": "tapssn1c1",
+                            "files": [
+                                {
+                                    "key": "ca",
+                                    "file-dir": "server_data/server1/client_data/client1/ca.crt"
+                                },
+                                {
+                                    "key": "cert",
+                                    "file-dir": "server_data/server1/client_data/client1/c.cert"
+                                },
+                                {
+                                    "key": "key",
+                                    "file-dir": "server_data/server1/client_data/client1/c.key"
+                                },
+                                {
+                                    "key": "tls-crypt",
+                                    "file-dir": "server_data/server1/client_data/client1/tc.key"
+                                }
+                            ],
+                            "base-conf": "server_data/server1/client_data/base-client.ovpn"
+                        }]
+                    },
+
+                    {
+                        "name": "tapcsnode1",
+                        "dev-name": "tapcsnode1",
+                        "dev-type": "tap",
+                        "port": 1194,
+                        "proto": "udp",
+                        "server-bridge": {
+                            "ip": "10.10.2.11",
+                            "mask": "255.255.255.0",
+                            "ip-min": "10.10.2.31",
+                            "ip-max": "10.10.2.50"
+                        },
+                        "push": "route-nopull; route 142.0.0.0 255.0.0.0 10.10.2.11; dhcp-option DNS 1.1.1.1; dhcp-option DNS 10.10.2.11",
+                        "files": [
+                            {
+                                "key": "ca",
+                                "file": "ca.crt",
+                                "file-dir": "server_data/server2/ca.crt"
+                            },
+                            {
+                                "key": "cert",
+                                "file": "server.crt",
+                                "file-dir": "server_data/server2/server.crt"
+                            },
+                            {
+                                "key": "key",
+                                "file": "server.key",
+                                "file-dir": "server_data/server2/server.key"
+                            },
+                            {
+                                "key": "tls-crypt",
+                                "file": "tc.key",
+                                "file-dir": "server_data/server2/tc.key"
+                            },
+                            {
+                                "key": "crl-verify",
+                                "file": "crl.pem",
+                                "file-dir": "server_data/server2/crl.pem"
+                            },
+                            {
+                                "key": "dh",
+                                "file": "dh.pem",
+                                "file-dir": "server_data/server2/dh.pem"
+                            },
+                            {
+                                "key": "ifconfig-pool-persist",
+                                "file": "ipp.txt",
+                                "file-dir": "server_data/server2/ipp.txt"
+                            }
+                        ],
+                        "base-conf": "server_data/base-sever.conf",
+                        "clients": [{
+                            "id": 1,
+                            "dev-name": "tapcsn1c1",
+                            "files": [
+                                {
+                                    "key": "ca",
+                                    "file-dir": "server_data/server2/client_data/client1/ca.crt"
+                                },
+                                {
+                                    "key": "cert",
+                                    "file-dir": "server_data/server2/client_data/client1/c.cert"
+                                },
+                                {
+                                    "key": "key",
+                                    "file-dir": "server_data/server2/client_data/client1/c.key"
+                                },
+                                {
+                                    "key": "tls-crypt",
+                                    "file-dir": "server_data/server2/client_data/client1/tc.key"
+                                }
+                            ],
+                            "base-conf": "server_data/server2/client_data/base-client.ovpn"
+                        }]
+                    }
+                ]
+            },
+            "openvswitch": {
+                "bridges": [
+                    {
+                        "name": "ovs-br",
+                        "ip": "10.10.2.11",
+                        "mask": "255.255.255.0",
+                        "controller": {
+                            "ip": "146.59.243.170",
+                            "port": "6653",
+                            "type": "tcp"
+                        },
+                        "gateway": {
+                            "enable": true,
+                            "network": "ens3"
+                        },
+                        "networks": [
+                            {
+                                "name": "tapssnode1"
+                            },
+                            {
+                                "name": "tapcsnode1"
+                            },
+                            {
+                                "name": "tapssn2c1"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        
+        
+
+
+
+
+
+
+
+        {
+            "id": 2,
+            "ip": "145.239.29.138",
+            "openvpn": {
+                "clients": [
+                   
+                ],
+                "servers": [
+                    {
+                        "name": "tapssnode2",
+                        "dev-name": "tapssnode2",
+                        "dev-type": "tap",
+                        "port": 1190,
+                        "proto": "udp",
+                        "server-bridge": {
+                            "ip": "10.10.2.12",
+                            "mask": "255.255.255.0",
+                            "ip-min": "10.10.2.10",
+                            "ip-max": "10.10.2.30"
+                        },
+                        "files": [
+                            {
+                                "key": "ca",
+                                "file": "ca.crt",
+                                "file-dir": "server_data/server1/ca.crt"
+                            },
+                            {
+                                "key": "cert",
+                                "file": "server.crt",
+                                "file-dir": "server_data/server1/server.crt"
+                            },
+                            {
+                                "key": "key",
+                                "file": "server.key",
+                                "file-dir": "server_data/server1/server.key"
+                            },
+                            {
+                                "key": "tls-crypt",
+                                "file": "tc.key",
+                                "file-dir": "server_data/server1/tc.key"
+                            },
+                            {
+                                "key": "crl-verify",
+                                "file": "crl.pem",
+                                "file-dir": "server_data/server1/crl.pem"
+                            },
+                            {
+                                "key": "dh",
+                                "file": "dh.pem",
+                                "file-dir": "server_data/server1/dh.pem"
+                            },
+                            {
+                                "key": "ifconfig-pool-persist",
+                                "file": "ipp.txt",
+                                "file-dir": "server_data/server1/ipp.txt"
+                            }
+                        ],
+                        "base-conf": "server_data/base-sever.conf",
+                        "clients": [{
+                            "id": 1,
+                            "dev-name": "tapssn2c1",
+                            "files": [
+                                {
+                                    "key": "ca",
+                                    "file-dir": "server_data/server1/client_data/client1/ca.crt"
+                                },
+                                {
+                                    "key": "cert",
+                                    "file-dir": "server_data/server1/client_data/client1/c.cert"
+                                },
+                                {
+                                    "key": "key",
+                                    "file-dir": "server_data/server1/client_data/client1/c.key"
+                                },
+                                {
+                                    "key": "tls-crypt",
+                                    "file-dir": "server_data/server1/client_data/client1/tc.key"
+                                }
+                            ],
+                            "base-conf": "server_data/server1/client_data/base-client.ovpn"
+                        }]
+                    },
+
+                    {
+                        "name": "tapcsnode2",
+                        "dev-name": "tapcsnode2",
+                        "dev-type": "tap",
+                        "port": 1194,
+                        "proto": "udp",
+                        "server-bridge": {
+                            "ip": "10.10.2.12",
+                            "mask": "255.255.255.0",
+                            "ip-min": "10.10.2.51",
+                            "ip-max": "10.10.2.70"
+                        },
+                        "push": "route-nopull; route 142.0.0.0 255.0.0.0 10.10.2.11; dhcp-option DNS 1.1.1.1; dhcp-option DNS 10.10.2.11",
+                        "files": [
+                            {
+                                "key": "ca",
+                                "file": "ca.crt",
+                                "file-dir": "server_data/server2/ca.crt"
+                            },
+                            {
+                                "key": "cert",
+                                "file": "server.crt",
+                                "file-dir": "server_data/server2/server.crt"
+                            },
+                            {
+                                "key": "key",
+                                "file": "server.key",
+                                "file-dir": "server_data/server2/server.key"
+                            },
+                            {
+                                "key": "tls-crypt",
+                                "file": "tc.key",
+                                "file-dir": "server_data/server2/tc.key"
+                            },
+                            {
+                                "key": "crl-verify",
+                                "file": "crl.pem",
+                                "file-dir": "server_data/server2/crl.pem"
+                            },
+                            {
+                                "key": "dh",
+                                "file": "dh.pem",
+                                "file-dir": "server_data/server2/dh.pem"
+                            },
+                            {
+                                "key": "ifconfig-pool-persist",
+                                "file": "ipp.txt",
+                                "file-dir": "server_data/server2/ipp.txt"
+                            }
+                        ],
+                        "base-conf": "server_data/base-sever.conf",
+                        "clients": [{
+                            "id": 1,
+                            "dev-name": "tapcsn2c1",
+                            "files": [
+                                {
+                                    "key": "ca",
+                                    "file-dir": "server_data/server2/client_data/client1/ca.crt"
+                                },
+                                {
+                                    "key": "cert",
+                                    "file-dir": "server_data/server2/client_data/client1/c.cert"
+                                },
+                                {
+                                    "key": "key",
+                                    "file-dir": "server_data/server2/client_data/client1/c.key"
+                                },
+                                {
+                                    "key": "tls-crypt",
+                                    "file-dir": "server_data/server2/client_data/client1/tc.key"
+                                }
+                            ],
+                            "base-conf": "server_data/server2/client_data/base-client.ovpn"
+                        }]
+                    }
+                ]
+            },
+            "openvswitch": {
+                "bridges": [
+                    {
+                        "name": "ovs-br",
+                        "ip": "10.10.2.12",
+                        "mask": "255.255.255.0",
+                        "controller": {
+                            "ip": "146.59.243.170",
+                            "port": "6653",
+                            "type": "tcp"
+                        },
+                        "gateway": {
+                            "enable": true,
+                            "network": "ens3"
+                        },
+                        "networks": [
+                            {
+                                "name": "tapssnode2"
+                            },
+                            {
+                                "name": "tapcsnode2"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

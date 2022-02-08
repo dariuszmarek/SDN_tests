@@ -274,7 +274,7 @@ def get_client(server, client_id):
                 openvpn_server_client = client
     return openvpn_server_client
 
-def generate_client_file(nodes, node_id, server_name, client_id, device_name, connect=True):
+def generate_client_file(nodes, node_id, server_name, client_id, connect=True):
     node = get_node(nodes, node_id)
     if node:
         server = get_openvpn_server(node,server_name)
@@ -299,11 +299,10 @@ def generate_client_file(nodes, node_id, server_name, client_id, device_name, co
                 
                 client_proto = get_key_if_exists(server,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_PROTO)
                 client_files = get_key_if_exists(client,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_CLIENTS_CLIENT_FILES)
-                # = get_key_if_exists(client,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_DEV_NAME)
+                client_dev_name = get_key_if_exists(client,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_DEV_NAME)
 
                 data_to_file.append("client")
-                #data_to_file.append("dev {}".format(client_dev_name))
-                data_to_file.append("dev {}".format(device_name))
+                data_to_file.append("dev {}".format(client_dev_name))
                 data_to_file.append("proto {}".format(client_proto))
                 data_to_file.append("remote {} {}".format(server_ip, server_port))
 
@@ -344,10 +343,8 @@ def generate_client_file(nodes, node_id, server_name, client_id, device_name, co
                         client_file.write("</{}>\n".format(files[0]))
 
 
-                run_command("sudo openvpn --mktun --dev {}".format(device_name))
-                # run_command("sudo openvpn --mktun --dev {}".format(client_dev_name))
-                # run_command('sudo ifconfig {} up'.format(client_dev_name))
-                run_command('sudo ifconfig {} up'.format(device_name))
+                run_command("sudo openvpn --mktun --dev {}".format(client_dev_name))
+                run_command('sudo ifconfig {} up'.format(client_dev_name))
 
                
                 print('To connect vpn client run: sudo openvpn --config {}'.format(out_filename))
@@ -363,8 +360,7 @@ def generate_clients_files_for_server(nodes, openvpn):
             node_id = get_key_if_exists(client,KEY_NODES_NODE_OPENVPN_CLIENTS_CLIENT_NODE_ID)
             server_name = get_key_if_exists(client,KEY_NODES_NODE_OPENVPN_CLIENTS_CLIENT_SERVER_NAME)
             client_id = get_key_if_exists(client,KEY_NODES_NODE_OPENVPN_CLIENTS_CLIENT_CLIENT_ID)
-            device_name = get_key_if_exists(client,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_DEV_NAME)
-            generate_client_file(nodes,node_id, server_name, client_id, device_name)
+            generate_client_file(nodes,node_id, server_name, client_id)
          
 
 
@@ -373,7 +369,7 @@ parser = argparse.ArgumentParser(description='openvswitch & openvpn')
 parser.add_argument('-i', action='store', type=int, help='pc id')
 parser.add_argument('-o', action='store_true', help='set openvswitch')
 parser.add_argument('-s', action='store_true', help='set openvpn server & generate client files to connect')
-parser.add_argument('-c', action='store', nargs=4, help='generate openvpn client file to node id, server name, client id , dev name')
+parser.add_argument('-c', action='store', nargs=3, help='generate openvpn client file to node id, server name, client id & create dev')
 parser.add_argument('-f', action='store', help='config file',required=True)
 parser.add_argument('-icp', action='store_true', help='install clients packages from config file')
 parser.add_argument('-isp', action='store_true', help='install servers packages from config file')
@@ -414,6 +410,6 @@ if args.o and node:
     set_ovs_bridges(openvswitch)
 
 if args.c and json_data and len(args.c) > 2:
-     generate_client_file(get_nodes(json_data), int(args.c[0]), args.c[1], int(args.c[2]), args.c[3])
+     generate_client_file(get_nodes(json_data), int(args.c[0]), args.c[1], int(args.c[2]))
 
 
