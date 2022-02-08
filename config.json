@@ -207,7 +207,7 @@
                             "ip-min": "10.10.2.31",
                             "ip-max": "10.10.2.50"
                         },
-                        "push": "route-nopull; route 142.0.0.0 255.0.0.0 10.10.2.11; dhcp-option DNS 1.1.1.1; dhcp-option DNS 10.10.2.11",
+                        "push": "route-nopull; route 10.10.2.0 255.255.255.0 10.10.2.11; dhcp-option DNS 1.1.1.1; dhcp-option DNS 10.10.2.11",
                         "files": [
                             {
                                 "key": "ca",
@@ -552,10 +552,10 @@
                         "server-bridge": {
                             "ip": "10.10.2.12",
                             "mask": "255.255.255.0",
-                            "ip-min": "10.10.2.31",
-                            "ip-max": "10.10.2.50"
+                            "ip-min": "10.10.2.51",
+                            "ip-max": "10.10.2.70"
                         },
-                        "push": "route-nopull; route 142.0.0.0 255.0.0.0 10.10.2.12; dhcp-option DNS 1.1.1.1; dhcp-option DNS 10.10.2.11",
+                        "push": "route-nopull; route 10.10.2.0 255.255.255.0 10.10.2.12; dhcp-option DNS 1.1.1.1; dhcp-option DNS 10.10.2.12",
                         "files": [
                             {
                                 "key": "ca",
@@ -904,10 +904,10 @@
                         "server-bridge": {
                             "ip": "10.10.2.13",
                             "mask": "255.255.255.0",
-                            "ip-min": "10.10.2.31",
-                            "ip-max": "10.10.2.50"
+                            "ip-min": "10.10.2.71",
+                            "ip-max": "10.10.2.90"
                         },
-                        "push": "route-nopull; route 142.0.0.0 255.0.0.0 10.10.2.13; dhcp-option DNS 1.1.1.1; dhcp-option DNS 10.10.2.11",
+                        "push": "route-nopull; route 10.10.2.0 255.255.255.0 10.10.2.13; dhcp-option DNS 1.1.1.1; dhcp-option DNS 10.10.2.13",
                         "files": [
                             {
                                 "key": "ca",
@@ -1051,7 +1051,7 @@
 
         {
             "id": 4,
-            "ip": "51.89.227.243",
+            "ip": "51.68.93.212",
             "openvpn": {
                 "clients": [
                     {
@@ -1256,10 +1256,10 @@
                         "server-bridge": {
                             "ip": "10.10.2.14",
                             "mask": "255.255.255.0",
-                            "ip-min": "10.10.2.31",
-                            "ip-max": "10.10.2.50"
+                            "ip-min": "10.10.2.91",
+                            "ip-max": "10.10.2.110"
                         },
-                        "push": "route-nopull; route 142.0.0.0 255.0.0.0 10.10.2.14; dhcp-option DNS 1.1.1.1; dhcp-option DNS 10.10.2.11",
+                        "push": "route-nopull; route 10.10.2.0 255.255.255.0 10.10.2.14; dhcp-option DNS 1.1.1.1; dhcp-option DNS 10.10.2.14",
                         "files": [
                             {
                                 "key": "ca",
@@ -1608,10 +1608,10 @@
                         "server-bridge": {
                             "ip": "10.10.2.15",
                             "mask": "255.255.255.0",
-                            "ip-min": "10.10.2.31",
-                            "ip-max": "10.10.2.50"
+                            "ip-min": "10.10.2.111",
+                            "ip-max": "10.10.2.130"
                         },
-                        "push": "route-nopull; route 142.0.0.0 255.0.0.0 10.10.2.15; dhcp-option DNS 1.1.1.1; dhcp-option DNS 10.10.2.11",
+                        "push": "route-nopull; route 10.10.2.0 255.255.255.0 10.10.2.15; dhcp-option DNS 1.1.1.1; dhcp-option DNS 10.10.2.15",
                         "files": [
                             {
                                 "key": "ca",
@@ -1769,4 +1769,4 @@
 
         
     ]
-}
+}azx

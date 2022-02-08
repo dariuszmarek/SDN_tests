@@ -96,6 +96,7 @@ def iptables_set_network_as_bridge_gatway(br_name, nic_name):
         run_command('sudo iptables -A FORWARD -i {0} -o {1} -j ACCEPT'.format(br_name, nic_name))
         run_command('sudo iptables -A FORWARD -i {1} -o {0} -j ACCEPT'.format(br_name, nic_name))
         run_command('sudo iptables -t nat -A POSTROUTING -o {} -j MASQUERADE'.format(nic_name))
+        run_command('sudo sysctl -w net.ipv4.ip_forward=1')
 
 def ifconfig_set_nic_ip(name, ip, mask):
     if name and ip and mask:
