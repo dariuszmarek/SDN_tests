@@ -65,7 +65,7 @@ OPENVPN_PATH = "/etc/openvpn/"
 OPENVPN_SERVER_DIR = "server"
 OPENVPN_BASIC_CIENT_NAME = "client"
 
-PRINT_ONLY = True
+PRINT_ONLY = False
 
 def run_command(command):
     if PRINT_ONLY:
