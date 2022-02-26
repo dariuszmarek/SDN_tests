@@ -373,14 +373,14 @@ def generate_clients_files_for_server(nodes, openvpn, json_data):
             generate_client_file(nodes,node_id, server_name, client_id, device_name, json_data)
          
 
-
+filename = "config.json"
 import argparse
 parser = argparse.ArgumentParser(description='openvswitch & openvpn')
 parser.add_argument('-i', action='store', type=int, help='pc id')
 parser.add_argument('-o', action='store_true', help='set openvswitch')
 parser.add_argument('-s', action='store_true', help='set openvpn server & generate client files to connect')
 parser.add_argument('-c', action='store', nargs=4, help='generate openvpn client file to node id, server name, client id , dev name')
-parser.add_argument('-f', action='store', help='config file',required=True)
+parser.add_argument('-f', action='store', help='config file, default: {}'.foramt(filename),required=True)
 parser.add_argument('-icp', action='store_true', help='install clients packages from config file')
 parser.add_argument('-isp', action='store_true', help='install servers packages from config file')
 
@@ -390,8 +390,11 @@ nodes = None
 json_data = None
 
 if args.f:
-    json_data = get_json(args.f)
-    nodes = get_nodes(json_data)
+    filename = args.f
+
+
+json_data = get_json(filename)
+nodes = get_nodes(json_data)
 
 
 if json_data and (args.icp or args.isp):
