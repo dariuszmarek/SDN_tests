@@ -380,7 +380,7 @@ parser.add_argument('-i', action='store', type=int, help='pc id')
 parser.add_argument('-o', action='store_true', help='set openvswitch')
 parser.add_argument('-s', action='store_true', help='set openvpn server & generate client files to connect')
 parser.add_argument('-c', action='store', nargs=4, help='generate openvpn client file to node id, server name, client id , dev name')
-parser.add_argument('-f', action='store', help='config file, default: {}'.format(filename),required=True)
+parser.add_argument('-f', action='store', help='config file, default: {}'.format(filename))
 parser.add_argument('-icp', action='store_true', help='install clients packages from config file')
 parser.add_argument('-isp', action='store_true', help='install servers packages from config file')
 
