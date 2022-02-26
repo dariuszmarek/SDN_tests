@@ -214,6 +214,7 @@ def set_openvpn_servers(node, openvpn, json_data):
 
             if not PRINT_ONLY:
                 server_file = open(server_file_path, "a")
+                server_file.write("\n")
             
             for data in data_to_file:
                 if PRINT_ONLY:
