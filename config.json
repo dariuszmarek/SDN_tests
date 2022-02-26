@@ -1,4 +1,281 @@
 {
+    "server-1-files": [
+        {
+            "key": "ca",
+            "file": "ca.crt",
+            "file-dir": "server_data/server1/ca.crt"
+        },
+        {
+            "key": "cert",
+            "file": "server.crt",
+            "file-dir": "server_data/server1/server.crt"
+        },
+        {
+            "key": "key",
+            "file": "server.key",
+            "file-dir": "server_data/server1/server.key"
+        },
+        {
+            "key": "tls-crypt",
+            "file": "tc.key",
+            "file-dir": "server_data/server1/tc.key"
+        },
+        {
+            "key": "crl-verify",
+            "file": "crl.pem",
+            "file-dir": "server_data/server1/crl.pem"
+        },
+        {
+            "key": "dh",
+            "file": "dh.pem",
+            "file-dir": "server_data/server1/dh.pem"
+        },
+        {
+            "key": "ifconfig-pool-persist",
+            "file": "ipp.txt",
+            "file-dir": "server_data/server1/ipp.txt"
+        }
+    ],
+    "server-1-clients": [
+        {
+            "id": 1,
+            "files": [
+                {
+                    "key": "ca",
+                    "file-dir": "server_data/server1/client_data/client1/ca.crt"
+                },
+                {
+                    "key": "cert",
+                    "file-dir": "server_data/server1/client_data/client1/c.cert"
+                },
+                {
+                    "key": "key",
+                    "file-dir": "server_data/server1/client_data/client1/c.key"
+                },
+                {
+                    "key": "tls-crypt",
+                    "file-dir": "server_data/server1/client_data/client1/tc.key"
+                }
+            ],
+            "base-conf": "server_data/server1/client_data/base-client.ovpn"
+        },
+        {
+            "id": 2,
+            "files": [
+                {
+                    "key": "ca",
+                    "file-dir": "server_data/server1/client_data/client2/ca.crt"
+                },
+                {
+                    "key": "cert",
+                    "file-dir": "server_data/server1/client_data/client2/c.cert"
+                },
+                {
+                    "key": "key",
+                    "file-dir": "server_data/server1/client_data/client2/c.key"
+                },
+                {
+                    "key": "tls-crypt",
+                    "file-dir": "server_data/server1/client_data/client2/tc.key"
+                }
+            ],
+            "base-conf": "server_data/server1/client_data/base-client.ovpn"
+        },
+        {
+            "id": 3,
+            "files": [
+                {
+                    "key": "ca",
+                    "file-dir": "server_data/server1/client_data/client3/ca.crt"
+                },
+                {
+                    "key": "cert",
+                    "file-dir": "server_data/server1/client_data/client3/c.cert"
+                },
+                {
+                    "key": "key",
+                    "file-dir": "server_data/server1/client_data/client3/c.key"
+                },
+                {
+                    "key": "tls-crypt",
+                    "file-dir": "server_data/server1/client_data/client3/tc.key"
+                }
+            ],
+            "base-conf": "server_data/server1/client_data/base-client.ovpn"
+        },
+        {
+            "id": 4,
+            "files": [
+                {
+                    "key": "ca",
+                    "file-dir": "server_data/server1/client_data/client4/ca.crt"
+                },
+                {
+                    "key": "cert",
+                    "file-dir": "server_data/server1/client_data/client4/c.cert"
+                },
+                {
+                    "key": "key",
+                    "file-dir": "server_data/server1/client_data/client4/c.key"
+                },
+                {
+                    "key": "tls-crypt",
+                    "file-dir": "server_data/server1/client_data/client4/tc.key"
+                }
+            ],
+            "base-conf": "server_data/server1/client_data/base-client.ovpn"
+        },
+        {
+            "id": 5,
+            "files": [
+                {
+                    "key": "ca",
+                    "file-dir": "server_data/server1/client_data/client5/ca.crt"
+                },
+                {
+                    "key": "cert",
+                    "file-dir": "server_data/server1/client_data/client5/c.cert"
+                },
+                {
+                    "key": "key",
+                    "file-dir": "server_data/server1/client_data/client5/c.key"
+                },
+                {
+                    "key": "tls-crypt",
+                    "file-dir": "server_data/server1/client_data/client5/tc.key"
+                }
+            ],
+            "base-conf": "server_data/server1/client_data/base-client.ovpn"
+        },
+        {
+            "id": 6,
+            "files": [
+                {
+                    "key": "ca",
+                    "file-dir": "server_data/server1/client_data/client6/ca.crt"
+                },
+                {
+                    "key": "cert",
+                    "file-dir": "server_data/server1/client_data/client6/c.cert"
+                },
+                {
+                    "key": "key",
+                    "file-dir": "server_data/server1/client_data/client6/c.key"
+                },
+                {
+                    "key": "tls-crypt",
+                    "file-dir": "server_data/server1/client_data/client6/tc.key"
+                }
+            ],
+            "base-conf": "server_data/server1/client_data/base-client.ovpn"
+        }
+    ],
+    "server-2-files": [
+        {
+            "key": "ca",
+            "file": "ca.crt",
+            "file-dir": "server_data/server2/ca.crt"
+        },
+        {
+            "key": "cert",
+            "file": "server.crt",
+            "file-dir": "server_data/server2/server.crt"
+        },
+        {
+            "key": "key",
+            "file": "server.key",
+            "file-dir": "server_data/server2/server.key"
+        },
+        {
+            "key": "tls-crypt",
+            "file": "tc.key",
+            "file-dir": "server_data/server2/tc.key"
+        },
+        {
+            "key": "crl-verify",
+            "file": "crl.pem",
+            "file-dir": "server_data/server2/crl.pem"
+        },
+        {
+            "key": "dh",
+            "file": "dh.pem",
+            "file-dir": "server_data/server2/dh.pem"
+        },
+        {
+            "key": "ifconfig-pool-persist",
+            "file": "ipp.txt",
+            "file-dir": "server_data/server2/ipp.txt"
+        }
+    ],
+    "server-2-clients": [
+        {
+            "id": 1,
+            "files": [
+                {
+                    "key": "ca",
+                    "file-dir": "server_data/server2/client_data/client1/ca.crt"
+                },
+                {
+                    "key": "cert",
+                    "file-dir": "server_data/server2/client_data/client1/c.cert"
+                },
+                {
+                    "key": "key",
+                    "file-dir": "server_data/server2/client_data/client1/c.key"
+                },
+                {
+                    "key": "tls-crypt",
+                    "file-dir": "server_data/server2/client_data/client1/tc.key"
+                }
+            ],
+            "base-conf": "server_data/server2/client_data/base-client.ovpn"
+        },
+        {
+            "id": 2,
+            "files": [
+                {
+                    "key": "ca",
+                    "file-dir": "server_data/server2/client_data/client2/ca.crt"
+                },
+                {
+                    "key": "cert",
+                    "file-dir": "server_data/server2/client_data/client2/c.cert"
+                },
+                {
+                    "key": "key",
+                    "file-dir": "server_data/server2/client_data/client2/c.key"
+                },
+                {
+                    "key": "tls-crypt",
+                    "file-dir": "server_data/server2/client_data/client2/tc.key"
+                }
+            ],
+            "base-conf": "server_data/server2/client_data/base-client.ovpn"
+        },
+        {
+            "id": 3,
+            "files": [
+                {
+                    "key": "ca",
+                    "file-dir": "server_data/server2/client_data/client3/ca.crt"
+                },
+                {
+                    "key": "cert",
+                    "file-dir": "server_data/server2/client_data/client3/c.cert"
+                },
+                {
+                    "key": "key",
+                    "file-dir": "server_data/server2/client_data/client3/c.key"
+                },
+                {
+                    "key": "tls-crypt",
+                    "file-dir": "server_data/server2/client_data/client3/tc.key"
+                }
+            ],
+            "base-conf": "server_data/server2/client_data/base-client.ovpn"
+        }
+    ],
+    "base-conf": "server_data/base-sever.conf",
     "Install": {
         "client": "openvpn",
         "server": "openvpn openssl iptables openvswitch-switch net-tools nmap traceroute"
@@ -11,10 +288,10 @@
                 "clients": [],
                 "servers": [
                     {
-                        "name": "tapssnode1",
-                        "dev-name": "tapssnode1",
+                        "name": "tapssn1n2",
+                        "dev-name": "tapssn1n2",
                         "dev-type": "tap",
-                        "port": 1190,
+                        "port": 1192,
                         "proto": "udp",
                         "server-bridge": {
                             "ip": "10.10.2.11",
@@ -22,184 +299,59 @@
                             "ip-min": "10.10.2.10",
                             "ip-max": "10.10.2.30"
                         },
-                        "files": [
-                            {
-                                "key": "ca",
-                                "file": "ca.crt",
-                                "file-dir": "server_data/server1/ca.crt"
-                            },
-                            {
-                                "key": "cert",
-                                "file": "server.crt",
-                                "file-dir": "server_data/server1/server.crt"
-                            },
-                            {
-                                "key": "key",
-                                "file": "server.key",
-                                "file-dir": "server_data/server1/server.key"
-                            },
-                            {
-                                "key": "tls-crypt",
-                                "file": "tc.key",
-                                "file-dir": "server_data/server1/tc.key"
-                            },
-                            {
-                                "key": "crl-verify",
-                                "file": "crl.pem",
-                                "file-dir": "server_data/server1/crl.pem"
-                            },
-                            {
-                                "key": "dh",
-                                "file": "dh.pem",
-                                "file-dir": "server_data/server1/dh.pem"
-                            },
-                            {
-                                "key": "ifconfig-pool-persist",
-                                "file": "ipp.txt",
-                                "file-dir": "server_data/server1/ipp.txt"
-                            }
-                        ],
-                        "base-conf": "server_data/base-sever.conf",
-                        "clients": [
-                            {
-                                "id": 1,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server1/client_data/client1/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server1/client_data/client1/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server1/client_data/client1/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server1/client_data/client1/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server1/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 2,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server1/client_data/client2/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server1/client_data/client2/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server1/client_data/client2/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server1/client_data/client2/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server1/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 3,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server1/client_data/client3/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server1/client_data/client3/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server1/client_data/client3/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server1/client_data/client3/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server1/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 4,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server1/client_data/client4/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server1/client_data/client4/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server1/client_data/client4/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server1/client_data/client4/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server1/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 5,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server1/client_data/client5/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server1/client_data/client5/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server1/client_data/client5/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server1/client_data/client5/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server1/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 6,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server1/client_data/client6/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server1/client_data/client6/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server1/client_data/client6/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server1/client_data/client6/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server1/client_data/base-client.ovpn"
-                            }
-                        ]
+                        "server":"server-1-files",
+                        "clients":"server-1-clients"
+                    },
+                    {
+                        "name": "tapssn1n3",
+                        "dev-name": "tapssn1n3",
+                        "dev-type": "tap",
+                        "port": 1193,
+                        "proto": "udp",
+                        "server-bridge": {
+                            "ip": "10.10.2.11",
+                            "mask": "255.255.255.0",
+                            "ip-min": "10.10.2.10",
+                            "ip-max": "10.10.2.30"
+                        },
+                        "server":"server-1-files",
+                        "clients":"server-1-clients"
+                    },
+                    {
+                        "name": "tapssn1n4",
+                        "dev-name": "tapssn1n4",
+                        "dev-type": "tap",
+                        "port": 1194,
+                        "proto": "udp",
+                        "server-bridge": {
+                            "ip": "10.10.2.11",
+                            "mask": "255.255.255.0",
+                            "ip-min": "10.10.2.10",
+                            "ip-max": "10.10.2.30"
+                        },
+                        "server":"server-1-files",
+                        "clients":"server-1-clients"
+                    },
+                    {
+                        "name": "tapssn1n5",
+                        "dev-name": "tapssn1n5",
+                        "dev-type": "tap",
+                        "port": 1195,
+                        "proto": "udp",
+                        "server-bridge": {
+                            "ip": "10.10.2.11",
+                            "mask": "255.255.255.0",
+                            "ip-min": "10.10.2.10",
+                            "ip-max": "10.10.2.30"
+                        },
+                        "server":"server-1-files",
+                        "clients":"server-1-clients"
                     },
                     {
                         "name": "tapcsnode1",
                         "dev-name": "tapcsnode1",
                         "dev-type": "tap",
-                        "port": 1194,
+                        "port": 1190,
                         "proto": "udp",
                         "server-bridge": {
                             "ip": "10.10.2.11",
@@ -208,112 +360,8 @@
                             "ip-max": "10.10.2.50"
                         },
                         "push": "route-nopull; route 10.10.2.0 255.255.255.0 10.10.2.11; dhcp-option DNS 1.1.1.1; dhcp-option DNS 10.10.2.11",
-                        "files": [
-                            {
-                                "key": "ca",
-                                "file": "ca.crt",
-                                "file-dir": "server_data/server2/ca.crt"
-                            },
-                            {
-                                "key": "cert",
-                                "file": "server.crt",
-                                "file-dir": "server_data/server2/server.crt"
-                            },
-                            {
-                                "key": "key",
-                                "file": "server.key",
-                                "file-dir": "server_data/server2/server.key"
-                            },
-                            {
-                                "key": "tls-crypt",
-                                "file": "tc.key",
-                                "file-dir": "server_data/server2/tc.key"
-                            },
-                            {
-                                "key": "crl-verify",
-                                "file": "crl.pem",
-                                "file-dir": "server_data/server2/crl.pem"
-                            },
-                            {
-                                "key": "dh",
-                                "file": "dh.pem",
-                                "file-dir": "server_data/server2/dh.pem"
-                            },
-                            {
-                                "key": "ifconfig-pool-persist",
-                                "file": "ipp.txt",
-                                "file-dir": "server_data/server2/ipp.txt"
-                            }
-                        ],
-                        "base-conf": "server_data/base-sever.conf",
-                        "clients": [
-                            {
-                                "id": 1,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server2/client_data/client1/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server2/client_data/client1/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server2/client_data/client1/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server2/client_data/client1/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server2/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 2,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server2/client_data/client2/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server2/client_data/client2/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server2/client_data/client2/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server2/client_data/client2/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server2/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 3,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server2/client_data/client3/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server2/client_data/client3/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server2/client_data/client3/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server2/client_data/client3/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server2/client_data/base-client.ovpn"
-                            }
-                        ]
+                        "server":"server-2-files",
+                        "clients":"server-2-clients"
                     }
                 ]
             },
@@ -334,8 +382,18 @@
                         },
                         "networks": [
                             {
-                                "name": "tapssnode1"
-                            }, {
+                                "name": "tapssn1n2"
+                            }, 
+                            {
+                                "name": "tapssn1n3"
+                            },
+                            {
+                                "name": "tapssn1n4"
+                            },
+                            {
+                                "name": "tapssn1n5"
+                            },
+                            {
                                 "name": "tapcsnode1"
                             }
                         ]
@@ -352,17 +410,17 @@
                 "clients": [
                     {
                         "node-id": 1,
-                        "server-name": "tapssnode1",
+                        "server-name": "tapssn1n2",
                         "dev-name": "tapssn1n2",
-                        "client-id": 1
+                        "client-id": 2
                     }
                 ],
                 "servers": [
                     {
-                        "name": "tapssnode2",
-                        "dev-name": "tapssnode2",
+                        "name": "tapssn2n3",
+                        "dev-name": "tapssn2n3",
                         "dev-type": "tap",
-                        "port": 1190,
+                        "port": 1193,
                         "proto": "udp",
                         "server-bridge": {
                             "ip": "10.10.2.12",
@@ -370,184 +428,44 @@
                             "ip-min": "10.10.2.10",
                             "ip-max": "10.10.2.30"
                         },
-                        "files": [
-                            {
-                                "key": "ca",
-                                "file": "ca.crt",
-                                "file-dir": "server_data/server1/ca.crt"
-                            },
-                            {
-                                "key": "cert",
-                                "file": "server.crt",
-                                "file-dir": "server_data/server1/server.crt"
-                            },
-                            {
-                                "key": "key",
-                                "file": "server.key",
-                                "file-dir": "server_data/server1/server.key"
-                            },
-                            {
-                                "key": "tls-crypt",
-                                "file": "tc.key",
-                                "file-dir": "server_data/server1/tc.key"
-                            },
-                            {
-                                "key": "crl-verify",
-                                "file": "crl.pem",
-                                "file-dir": "server_data/server1/crl.pem"
-                            },
-                            {
-                                "key": "dh",
-                                "file": "dh.pem",
-                                "file-dir": "server_data/server1/dh.pem"
-                            },
-                            {
-                                "key": "ifconfig-pool-persist",
-                                "file": "ipp.txt",
-                                "file-dir": "server_data/server1/ipp.txt"
-                            }
-                        ],
-                        "base-conf": "server_data/base-sever.conf",
-                        "clients": [
-                            {
-                                "id": 1,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server1/client_data/client1/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server1/client_data/client1/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server1/client_data/client1/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server1/client_data/client1/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server1/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 2,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server1/client_data/client2/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server1/client_data/client2/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server1/client_data/client2/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server1/client_data/client2/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server1/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 3,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server1/client_data/client3/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server1/client_data/client3/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server1/client_data/client3/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server1/client_data/client3/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server1/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 4,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server1/client_data/client4/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server1/client_data/client4/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server1/client_data/client4/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server1/client_data/client4/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server1/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 5,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server1/client_data/client5/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server1/client_data/client5/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server1/client_data/client5/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server1/client_data/client5/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server1/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 6,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server1/client_data/client6/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server1/client_data/client6/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server1/client_data/client6/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server1/client_data/client6/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server1/client_data/base-client.ovpn"
-                            }
-                        ]
+                        "server":"server-1-files",
+                        "clients":"server-1-clients"
+                    },
+                    {
+                        "name": "tapssn2n4",
+                        "dev-name": "tapssn2n4",
+                        "dev-type": "tap",
+                        "port": 1194,
+                        "proto": "udp",
+                        "server-bridge": {
+                            "ip": "10.10.2.12",
+                            "mask": "255.255.255.0",
+                            "ip-min": "10.10.2.10",
+                            "ip-max": "10.10.2.30"
+                        },
+                        "server":"server-1-files",
+                        "clients":"server-1-clients"
+                    },
+                    {
+                        "name": "tapssn2n5",
+                        "dev-name": "tapssn2n5",
+                        "dev-type": "tap",
+                        "port": 1195,
+                        "proto": "udp",
+                        "server-bridge": {
+                            "ip": "10.10.2.12",
+                            "mask": "255.255.255.0",
+                            "ip-min": "10.10.2.10",
+                            "ip-max": "10.10.2.30"
+                        },
+                        "server":"server-1-files",
+                        "clients":"server-1-clients"
                     },
                     {
                         "name": "tapcsnode2",
                         "dev-name": "tapcsnode2",
                         "dev-type": "tap",
-                        "port": 1194,
+                        "port": 1190,
                         "proto": "udp",
                         "server-bridge": {
                             "ip": "10.10.2.12",
@@ -555,113 +473,9 @@
                             "ip-min": "10.10.2.51",
                             "ip-max": "10.10.2.70"
                         },
-                        "push": "route-nopull; route 10.10.2.0 255.255.255.0 10.10.2.12; dhcp-option DNS 1.1.1.1; dhcp-option DNS 10.10.2.12",
-                        "files": [
-                            {
-                                "key": "ca",
-                                "file": "ca.crt",
-                                "file-dir": "server_data/server2/ca.crt"
-                            },
-                            {
-                                "key": "cert",
-                                "file": "server.crt",
-                                "file-dir": "server_data/server2/server.crt"
-                            },
-                            {
-                                "key": "key",
-                                "file": "server.key",
-                                "file-dir": "server_data/server2/server.key"
-                            },
-                            {
-                                "key": "tls-crypt",
-                                "file": "tc.key",
-                                "file-dir": "server_data/server2/tc.key"
-                            },
-                            {
-                                "key": "crl-verify",
-                                "file": "crl.pem",
-                                "file-dir": "server_data/server2/crl.pem"
-                            },
-                            {
-                                "key": "dh",
-                                "file": "dh.pem",
-                                "file-dir": "server_data/server2/dh.pem"
-                            },
-                            {
-                                "key": "ifconfig-pool-persist",
-                                "file": "ipp.txt",
-                                "file-dir": "server_data/server2/ipp.txt"
-                            }
-                        ],
-                        "base-conf": "server_data/base-sever.conf",
-                        "clients": [
-                            {
-                                "id": 1,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server2/client_data/client1/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server2/client_data/client1/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server2/client_data/client1/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server2/client_data/client1/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server2/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 2,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server2/client_data/client2/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server2/client_data/client2/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server2/client_data/client2/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server2/client_data/client2/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server2/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 3,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server2/client_data/client3/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server2/client_data/client3/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server2/client_data/client3/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server2/client_data/client3/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server2/client_data/base-client.ovpn"
-                            }
-                        ]
+                        "server":"server-2-files",
+                        "clients":"server-2-clients",
+                        "push": "route-nopull; route 10.10.2.0 255.255.255.0 10.10.2.12; dhcp-option DNS 1.1.1.1; dhcp-option DNS 10.10.2.12"
                     }
                 ]
             },
@@ -682,13 +496,19 @@
                         },
                         "networks": [
                             {
-                                "name": "tapssnode2"
+                                "name": "tapssn1n2"
+                            },
+                            {
+                                "name": "tapssn2n3"
+                            },
+                            {
+                                "name": "tapssn2n4"
+                            },
+                            {
+                                "name": "tapssn2n5"
                             },
                             {
                                 "name": "tapcsnode2"
-                            },
-                            {
-                                "name": "tapssn1n2"
                             }
                         ]
                     }
@@ -704,17 +524,23 @@
                 "clients": [
                     {
                         "node-id": 1,
-                        "server-name": "tapssnode1",
+                        "server-name": "tapssn1n3",
                         "dev-name": "tapssn1n3",
-                        "client-id": 2
+                        "client-id": 3
+                    },
+                    {
+                        "node-id": 2,
+                        "server-name": "tapssn2n3",
+                        "dev-name": "tapssn2n3",
+                        "client-id": 3
                     }
                 ],
                 "servers": [
                     {
-                        "name": "tapssnode3",
-                        "dev-name": "tapssnode3",
+                        "name": "tapssn3n4",
+                        "dev-name": "tapssn3n4",
                         "dev-type": "tap",
-                        "port": 1190,
+                        "port": 1194,
                         "proto": "udp",
                         "server-bridge": {
                             "ip": "10.10.2.13",
@@ -722,184 +548,29 @@
                             "ip-min": "10.10.2.10",
                             "ip-max": "10.10.2.30"
                         },
-                        "files": [
-                            {
-                                "key": "ca",
-                                "file": "ca.crt",
-                                "file-dir": "server_data/server1/ca.crt"
-                            },
-                            {
-                                "key": "cert",
-                                "file": "server.crt",
-                                "file-dir": "server_data/server1/server.crt"
-                            },
-                            {
-                                "key": "key",
-                                "file": "server.key",
-                                "file-dir": "server_data/server1/server.key"
-                            },
-                            {
-                                "key": "tls-crypt",
-                                "file": "tc.key",
-                                "file-dir": "server_data/server1/tc.key"
-                            },
-                            {
-                                "key": "crl-verify",
-                                "file": "crl.pem",
-                                "file-dir": "server_data/server1/crl.pem"
-                            },
-                            {
-                                "key": "dh",
-                                "file": "dh.pem",
-                                "file-dir": "server_data/server1/dh.pem"
-                            },
-                            {
-                                "key": "ifconfig-pool-persist",
-                                "file": "ipp.txt",
-                                "file-dir": "server_data/server1/ipp.txt"
-                            }
-                        ],
-                        "base-conf": "server_data/base-sever.conf",
-                        "clients": [
-                            {
-                                "id": 1,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server1/client_data/client1/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server1/client_data/client1/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server1/client_data/client1/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server1/client_data/client1/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server1/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 2,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server1/client_data/client2/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server1/client_data/client2/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server1/client_data/client2/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server1/client_data/client2/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server1/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 3,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server1/client_data/client3/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server1/client_data/client3/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server1/client_data/client3/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server1/client_data/client3/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server1/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 4,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server1/client_data/client4/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server1/client_data/client4/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server1/client_data/client4/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server1/client_data/client4/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server1/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 5,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server1/client_data/client5/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server1/client_data/client5/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server1/client_data/client5/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server1/client_data/client5/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server1/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 6,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server1/client_data/client6/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server1/client_data/client6/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server1/client_data/client6/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server1/client_data/client6/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server1/client_data/base-client.ovpn"
-                            }
-                        ]
+                        "server":"server-1-files",
+                        "clients":"server-1-clients"
+                    },
+                    {
+                        "name": "tapssn3n5",
+                        "dev-name": "tapssn3n5",
+                        "dev-type": "tap",
+                        "port": 1195,
+                        "proto": "udp",
+                        "server-bridge": {
+                            "ip": "10.10.2.13",
+                            "mask": "255.255.255.0",
+                            "ip-min": "10.10.2.10",
+                            "ip-max": "10.10.2.30"
+                        },
+                        "server":"server-1-files",
+                        "clients":"server-1-clients"
                     },
                     {
                         "name": "tapcsnode3",
                         "dev-name": "tapcsnode3",
                         "dev-type": "tap",
-                        "port": 1194,
+                        "port": 1190,
                         "proto": "udp",
                         "server-bridge": {
                             "ip": "10.10.2.13",
@@ -907,113 +578,9 @@
                             "ip-min": "10.10.2.71",
                             "ip-max": "10.10.2.90"
                         },
-                        "push": "route-nopull; route 10.10.2.0 255.255.255.0 10.10.2.13; dhcp-option DNS 1.1.1.1; dhcp-option DNS 10.10.2.13",
-                        "files": [
-                            {
-                                "key": "ca",
-                                "file": "ca.crt",
-                                "file-dir": "server_data/server2/ca.crt"
-                            },
-                            {
-                                "key": "cert",
-                                "file": "server.crt",
-                                "file-dir": "server_data/server2/server.crt"
-                            },
-                            {
-                                "key": "key",
-                                "file": "server.key",
-                                "file-dir": "server_data/server2/server.key"
-                            },
-                            {
-                                "key": "tls-crypt",
-                                "file": "tc.key",
-                                "file-dir": "server_data/server2/tc.key"
-                            },
-                            {
-                                "key": "crl-verify",
-                                "file": "crl.pem",
-                                "file-dir": "server_data/server2/crl.pem"
-                            },
-                            {
-                                "key": "dh",
-                                "file": "dh.pem",
-                                "file-dir": "server_data/server2/dh.pem"
-                            },
-                            {
-                                "key": "ifconfig-pool-persist",
-                                "file": "ipp.txt",
-                                "file-dir": "server_data/server2/ipp.txt"
-                            }
-                        ],
-                        "base-conf": "server_data/base-sever.conf",
-                        "clients": [
-                            {
-                                "id": 1,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server2/client_data/client1/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server2/client_data/client1/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server2/client_data/client1/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server2/client_data/client1/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server2/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 2,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server2/client_data/client2/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server2/client_data/client2/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server2/client_data/client2/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server2/client_data/client2/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server2/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 3,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server2/client_data/client3/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server2/client_data/client3/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server2/client_data/client3/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server2/client_data/client3/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server2/client_data/base-client.ovpn"
-                            }
-                        ]
+                        "server":"server-2-files",
+                        "clients":"server-2-clients",
+                        "push": "route-nopull; route 10.10.2.0 255.255.255.0 10.10.2.13; dhcp-option DNS 1.1.1.1; dhcp-option DNS 10.10.2.13"
                     }
                 ]
             },
@@ -1034,13 +601,19 @@
                         },
                         "networks": [
                             {
-                                "name": "tapssnode3"
+                                "name": "tapssn1n3"
+                            },
+                            {
+                                "name": "tapssn2n3"
+                            },
+                            {
+                                "name": "tapssn3n4"
+                            },
+                            {
+                                "name": "tapssn3n5"
                             },
                             {
                                 "name": "tapcsnode3"
-                            },
-                            {
-                                "name": "tapssn1n3"
                             }
                         ]
                     }
@@ -1056,17 +629,29 @@
                 "clients": [
                     {
                         "node-id": 1,
-                        "server-name": "tapssnode1",
+                        "server-name": "tapssn1n4",
                         "dev-name": "tapssn1n4",
-                        "client-id": 3
+                        "client-id": 4
+                    },
+                    {
+                        "node-id": 2,
+                        "server-name": "tapssn2n4",
+                        "dev-name": "tapssn2n4",
+                        "client-id": 4
+                    },
+                    {
+                        "node-id": 3,
+                        "server-name": "tapssn3n4",
+                        "dev-name": "tapssn3n4",
+                        "client-id": 4
                     }
                 ],
                 "servers": [
                     {
-                        "name": "tapssnode4",
-                        "dev-name": "tapssnode4",
+                        "name": "tapssn4n5",
+                        "dev-name": "tapssn4n5",
                         "dev-type": "tap",
-                        "port": 1190,
+                        "port": 1195,
                         "proto": "udp",
                         "server-bridge": {
                             "ip": "10.10.2.14",
@@ -1074,184 +659,14 @@
                             "ip-min": "10.10.2.10",
                             "ip-max": "10.10.2.30"
                         },
-                        "files": [
-                            {
-                                "key": "ca",
-                                "file": "ca.crt",
-                                "file-dir": "server_data/server1/ca.crt"
-                            },
-                            {
-                                "key": "cert",
-                                "file": "server.crt",
-                                "file-dir": "server_data/server1/server.crt"
-                            },
-                            {
-                                "key": "key",
-                                "file": "server.key",
-                                "file-dir": "server_data/server1/server.key"
-                            },
-                            {
-                                "key": "tls-crypt",
-                                "file": "tc.key",
-                                "file-dir": "server_data/server1/tc.key"
-                            },
-                            {
-                                "key": "crl-verify",
-                                "file": "crl.pem",
-                                "file-dir": "server_data/server1/crl.pem"
-                            },
-                            {
-                                "key": "dh",
-                                "file": "dh.pem",
-                                "file-dir": "server_data/server1/dh.pem"
-                            },
-                            {
-                                "key": "ifconfig-pool-persist",
-                                "file": "ipp.txt",
-                                "file-dir": "server_data/server1/ipp.txt"
-                            }
-                        ],
-                        "base-conf": "server_data/base-sever.conf",
-                        "clients": [
-                            {
-                                "id": 1,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server1/client_data/client1/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server1/client_data/client1/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server1/client_data/client1/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server1/client_data/client1/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server1/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 2,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server1/client_data/client2/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server1/client_data/client2/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server1/client_data/client2/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server1/client_data/client2/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server1/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 3,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server1/client_data/client3/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server1/client_data/client3/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server1/client_data/client3/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server1/client_data/client3/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server1/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 4,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server1/client_data/client4/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server1/client_data/client4/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server1/client_data/client4/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server1/client_data/client4/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server1/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 5,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server1/client_data/client5/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server1/client_data/client5/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server1/client_data/client5/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server1/client_data/client5/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server1/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 6,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server1/client_data/client6/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server1/client_data/client6/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server1/client_data/client6/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server1/client_data/client6/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server1/client_data/base-client.ovpn"
-                            }
-                        ]
+                        "server":"server-1-files",
+                        "clients":"server-1-clients"
                     },
                     {
                         "name": "tapcsnode4",
                         "dev-name": "tapcsnode4",
                         "dev-type": "tap",
-                        "port": 1194,
+                        "port": 1190,
                         "proto": "udp",
                         "server-bridge": {
                             "ip": "10.10.2.14",
@@ -1259,113 +674,9 @@
                             "ip-min": "10.10.2.91",
                             "ip-max": "10.10.2.110"
                         },
-                        "push": "route-nopull; route 10.10.2.0 255.255.255.0 10.10.2.14; dhcp-option DNS 1.1.1.1; dhcp-option DNS 10.10.2.14",
-                        "files": [
-                            {
-                                "key": "ca",
-                                "file": "ca.crt",
-                                "file-dir": "server_data/server2/ca.crt"
-                            },
-                            {
-                                "key": "cert",
-                                "file": "server.crt",
-                                "file-dir": "server_data/server2/server.crt"
-                            },
-                            {
-                                "key": "key",
-                                "file": "server.key",
-                                "file-dir": "server_data/server2/server.key"
-                            },
-                            {
-                                "key": "tls-crypt",
-                                "file": "tc.key",
-                                "file-dir": "server_data/server2/tc.key"
-                            },
-                            {
-                                "key": "crl-verify",
-                                "file": "crl.pem",
-                                "file-dir": "server_data/server2/crl.pem"
-                            },
-                            {
-                                "key": "dh",
-                                "file": "dh.pem",
-                                "file-dir": "server_data/server2/dh.pem"
-                            },
-                            {
-                                "key": "ifconfig-pool-persist",
-                                "file": "ipp.txt",
-                                "file-dir": "server_data/server2/ipp.txt"
-                            }
-                        ],
-                        "base-conf": "server_data/base-sever.conf",
-                        "clients": [
-                            {
-                                "id": 1,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server2/client_data/client1/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server2/client_data/client1/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server2/client_data/client1/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server2/client_data/client1/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server2/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 2,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server2/client_data/client2/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server2/client_data/client2/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server2/client_data/client2/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server2/client_data/client2/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server2/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 3,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server2/client_data/client3/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server2/client_data/client3/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server2/client_data/client3/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server2/client_data/client3/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server2/client_data/base-client.ovpn"
-                            }
-                        ]
+                        "server":"server-2-files",
+                        "clients":"server-2-clients",
+                        "push": "route-nopull; route 10.10.2.0 255.255.255.0 10.10.2.14; dhcp-option DNS 1.1.1.1; dhcp-option DNS 10.10.2.14"
                     }
                 ]
             },
@@ -1386,14 +697,21 @@
                         },
                         "networks": [
                             {
-                                "name": "tapssnode4"
+                                "name": "tapssn1n4"
+                            },
+                            {
+                                "name": "tapssn2n4"
+                            },
+                            {
+                                "name": "tapssn3n4"
+                            },
+                            {
+                                "name": "tapssn4n5"
                             },
                             {
                                 "name": "tapcsnode4"
-                            },
-                            {
-                                "name": "tapssn1n4"
                             }
+                           
                         ]
                     }
                 ]
@@ -1407,203 +725,36 @@
             "openvpn": {
                 "clients": [
                     {
+                        "node-id": 1,
+                        "server-name": "tapssn1n5",
+                        "dev-name": "tapssn1n5",
+                        "client-id": 5
+                    },
+                    {
                         "node-id": 2,
-                        "server-name": "tapssnode2",
+                        "server-name": "tapssn2n5",
                         "dev-name": "tapssn2n5",
-                        "client-id": 1
+                        "client-id": 5
+                    },
+                    {
+                        "node-id": 3,
+                        "server-name": "tapssn3n5",
+                        "dev-name": "tapssn3n5",
+                        "client-id": 5
+                    },
+                    {
+                        "node-id": 4,
+                        "server-name": "tapssn4n5",
+                        "dev-name": "tapssn4n5",
+                        "client-id": 5
                     }
                 ],
                 "servers": [
                     {
-                        "name": "tapssnode5",
-                        "dev-name": "tapssnode5",
-                        "dev-type": "tap",
-                        "port": 1190,
-                        "proto": "udp",
-                        "server-bridge": {
-                            "ip": "10.10.2.15",
-                            "mask": "255.255.255.0",
-                            "ip-min": "10.10.2.10",
-                            "ip-max": "10.10.2.30"
-                        },
-                        "files": [
-                            {
-                                "key": "ca",
-                                "file": "ca.crt",
-                                "file-dir": "server_data/server1/ca.crt"
-                            },
-                            {
-                                "key": "cert",
-                                "file": "server.crt",
-                                "file-dir": "server_data/server1/server.crt"
-                            },
-                            {
-                                "key": "key",
-                                "file": "server.key",
-                                "file-dir": "server_data/server1/server.key"
-                            },
-                            {
-                                "key": "tls-crypt",
-                                "file": "tc.key",
-                                "file-dir": "server_data/server1/tc.key"
-                            },
-                            {
-                                "key": "crl-verify",
-                                "file": "crl.pem",
-                                "file-dir": "server_data/server1/crl.pem"
-                            },
-                            {
-                                "key": "dh",
-                                "file": "dh.pem",
-                                "file-dir": "server_data/server1/dh.pem"
-                            },
-                            {
-                                "key": "ifconfig-pool-persist",
-                                "file": "ipp.txt",
-                                "file-dir": "server_data/server1/ipp.txt"
-                            }
-                        ],
-                        "base-conf": "server_data/base-sever.conf",
-                        "clients": [
-                            {
-                                "id": 1,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server1/client_data/client1/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server1/client_data/client1/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server1/client_data/client1/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server1/client_data/client1/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server1/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 2,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server1/client_data/client2/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server1/client_data/client2/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server1/client_data/client2/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server1/client_data/client2/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server1/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 3,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server1/client_data/client3/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server1/client_data/client3/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server1/client_data/client3/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server1/client_data/client3/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server1/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 4,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server1/client_data/client4/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server1/client_data/client4/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server1/client_data/client4/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server1/client_data/client4/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server1/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 5,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server1/client_data/client5/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server1/client_data/client5/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server1/client_data/client5/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server1/client_data/client5/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server1/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 6,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server1/client_data/client6/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server1/client_data/client6/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server1/client_data/client6/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server1/client_data/client6/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server1/client_data/base-client.ovpn"
-                            }
-                        ]
-                    },
-                    {
                         "name": "tapcsnode5",
                         "dev-name": "tapcsnode5",
                         "dev-type": "tap",
-                        "port": 1194,
+                        "port": 1190,
                         "proto": "udp",
                         "server-bridge": {
                             "ip": "10.10.2.15",
@@ -1611,113 +762,9 @@
                             "ip-min": "10.10.2.111",
                             "ip-max": "10.10.2.130"
                         },
-                        "push": "route-nopull; route 10.10.2.0 255.255.255.0 10.10.2.15; dhcp-option DNS 1.1.1.1; dhcp-option DNS 10.10.2.15",
-                        "files": [
-                            {
-                                "key": "ca",
-                                "file": "ca.crt",
-                                "file-dir": "server_data/server2/ca.crt"
-                            },
-                            {
-                                "key": "cert",
-                                "file": "server.crt",
-                                "file-dir": "server_data/server2/server.crt"
-                            },
-                            {
-                                "key": "key",
-                                "file": "server.key",
-                                "file-dir": "server_data/server2/server.key"
-                            },
-                            {
-                                "key": "tls-crypt",
-                                "file": "tc.key",
-                                "file-dir": "server_data/server2/tc.key"
-                            },
-                            {
-                                "key": "crl-verify",
-                                "file": "crl.pem",
-                                "file-dir": "server_data/server2/crl.pem"
-                            },
-                            {
-                                "key": "dh",
-                                "file": "dh.pem",
-                                "file-dir": "server_data/server2/dh.pem"
-                            },
-                            {
-                                "key": "ifconfig-pool-persist",
-                                "file": "ipp.txt",
-                                "file-dir": "server_data/server2/ipp.txt"
-                            }
-                        ],
-                        "base-conf": "server_data/base-sever.conf",
-                        "clients": [
-                            {
-                                "id": 1,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server2/client_data/client1/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server2/client_data/client1/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server2/client_data/client1/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server2/client_data/client1/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server2/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 2,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server2/client_data/client2/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server2/client_data/client2/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server2/client_data/client2/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server2/client_data/client2/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server2/client_data/base-client.ovpn"
-                            },
-                            {
-                                "id": 3,
-                                "files": [
-                                    {
-                                        "key": "ca",
-                                        "file-dir": "server_data/server2/client_data/client3/ca.crt"
-                                    },
-                                    {
-                                        "key": "cert",
-                                        "file-dir": "server_data/server2/client_data/client3/c.cert"
-                                    },
-                                    {
-                                        "key": "key",
-                                        "file-dir": "server_data/server2/client_data/client3/c.key"
-                                    },
-                                    {
-                                        "key": "tls-crypt",
-                                        "file-dir": "server_data/server2/client_data/client3/tc.key"
-                                    }
-                                ],
-                                "base-conf": "server_data/server2/client_data/base-client.ovpn"
-                            }
-                        ]
+                        "server":"server-2-files",
+                        "clients":"server-2-clients",
+                        "push": "route-nopull; route 10.10.2.0 255.255.255.0 10.10.2.15; dhcp-option DNS 1.1.1.1; dhcp-option DNS 10.10.2.15"
                     }
                 ]
             },
@@ -1738,14 +785,21 @@
                         },
                         "networks": [
                             {
-                                "name": "tapssnode5"
-                            },
-                            {
-                                "name": "tapcsnode5"
+                                "name": "tapssn1n5"
                             },
                             {
                                 "name": "tapssn2n5"
+                            },
+                            {
+                                "name": "tapssn3n5"
+                            },
+                            {
+                                "name": "tapssn4n5"
+                            },
+                            {
+                                "name": "tapcsnode5"
                             }
+                           
                         ]
                     }
                 ]

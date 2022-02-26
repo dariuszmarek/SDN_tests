@@ -65,7 +65,7 @@ OPENVPN_PATH = "/etc/openvpn/"
 OPENVPN_SERVER_DIR = "server"
 OPENVPN_BASIC_CIENT_NAME = "client"
 
-PRINT_ONLY = True
+PRINT_ONLY = False
 
 def run_command(command):
     if PRINT_ONLY:
@@ -103,42 +103,42 @@ def ifconfig_set_nic_ip(name, ip, mask):
         run_command('sudo ifconfig ovs-br 0'.format(name))
         run_command('sudo ifconfig {} {} netmask {} up'.format(name, ip, mask))
 
-def get_value_if_exists(data, key):
+def get_key_if_exists(data, key):
     if key in data:
         return data[key]
     else:
         return None
 
 def set_ovs_bridges(openvswitch):
-    openvswitch_bridges = get_value_if_exists(openvswitch,KEY_NODES_NODE_OPENVSWITCH_BRIDGES)
+    openvswitch_bridges = get_key_if_exists(openvswitch,KEY_NODES_NODE_OPENVSWITCH_BRIDGES)
     if openvswitch_bridges and isinstance(openvswitch_bridges, list):
         for bridge in openvswitch_bridges:
-            br_name = get_value_if_exists(bridge,KEY_NODES_NODE_OPENVSWITCH_BRIDGE_NAME)
-            br_ip = get_value_if_exists(bridge,KEY_NODES_NODE_OPENVSWITCH_BRIDGE_IP)
-            br_mask = get_value_if_exists(bridge,KEY_NODES_NODE_OPENVSWITCH_BRIDGE_MASK)
-            br_controller = get_value_if_exists(bridge,KEY_NODES_NODE_OPENVSWITCH_BRIDGE_CONTROLLER)
-            br_gateway = get_value_if_exists(bridge,KEY_NODES_NODE_OPENVSWITCH_BRIDGE_GATEWAY)
-            br_networks = get_value_if_exists(bridge,KEY_NODES_NODE_OPENVSWITCH_BRIDGE_NETWORKS)
+            br_name = get_key_if_exists(bridge,KEY_NODES_NODE_OPENVSWITCH_BRIDGE_NAME)
+            br_ip = get_key_if_exists(bridge,KEY_NODES_NODE_OPENVSWITCH_BRIDGE_IP)
+            br_mask = get_key_if_exists(bridge,KEY_NODES_NODE_OPENVSWITCH_BRIDGE_MASK)
+            br_controller = get_key_if_exists(bridge,KEY_NODES_NODE_OPENVSWITCH_BRIDGE_CONTROLLER)
+            br_gateway = get_key_if_exists(bridge,KEY_NODES_NODE_OPENVSWITCH_BRIDGE_GATEWAY)
+            br_networks = get_key_if_exists(bridge,KEY_NODES_NODE_OPENVSWITCH_BRIDGE_NETWORKS)
 
             ovs_del_br(br_name)
             ovs_add_br(br_name)
             ifconfig_set_nic_ip(br_name, br_ip, br_mask)
 
             if br_controller:
-                br_controller_type = get_value_if_exists(br_controller,KEY_NODES_NODE_OPENVSWITCH_BRIDGE_CONTROLLER_TYPE)
-                br_controller_ip = get_value_if_exists(br_controller,KEY_NODES_NODE_OPENVSWITCH_BRIDGE_CONTROLLER_IP)
-                br_controller_port = get_value_if_exists(br_controller,KEY_NODES_NODE_OPENVSWITCH_BRIDGE_CONTROLLER_PORT)
+                br_controller_type = get_key_if_exists(br_controller,KEY_NODES_NODE_OPENVSWITCH_BRIDGE_CONTROLLER_TYPE)
+                br_controller_ip = get_key_if_exists(br_controller,KEY_NODES_NODE_OPENVSWITCH_BRIDGE_CONTROLLER_IP)
+                br_controller_port = get_key_if_exists(br_controller,KEY_NODES_NODE_OPENVSWITCH_BRIDGE_CONTROLLER_PORT)
                 ovs_set_tcp_controller(br_name, br_controller_type, br_controller_ip, br_controller_port)
             
             if br_networks and isinstance(br_networks, list):
                 for br_network in br_networks:
-                    br_network_name = get_value_if_exists(br_network,KEY_NODES_NODE_OPENVSWITCH_BRIDGE_NETWORK_NAME)
+                    br_network_name = get_key_if_exists(br_network,KEY_NODES_NODE_OPENVSWITCH_BRIDGE_NETWORK_NAME)
                     ovs_add_port(br_name, br_network_name)
 
             if br_gateway:
-                br_gateway_enable = get_value_if_exists(br_gateway,KEY_NODES_NODE_OPENVSWITCH_BRIDGE_GATEWAY_ENABLE)
+                br_gateway_enable = get_key_if_exists(br_gateway,KEY_NODES_NODE_OPENVSWITCH_BRIDGE_GATEWAY_ENABLE)
                 if br_gateway_enable:
-                    br_gateway_network = get_value_if_exists(br_gateway,KEY_NODES_NODE_OPENVSWITCH_BRIDGE_GATEWAY_NETWORK)
+                    br_gateway_network = get_key_if_exists(br_gateway,KEY_NODES_NODE_OPENVSWITCH_BRIDGE_GATEWAY_NETWORK)
                     iptables_set_network_as_bridge_gatway(br_name, br_gateway_network)
 
 def copy_file(source, destination):
@@ -150,7 +150,7 @@ def copy_file(source, destination):
             os.makedirs(dst.parent)
         shutil.copyfile(source, destination)
 
-def set_openvpn_servers(node, openvpn, json_data):
+def set_openvpn_servers(node, openvpn):
     servers = openvpn[KEY_NODES_NODE_OPENVPN_SERVERS]
     if servers and isinstance(servers, list):
         for server in servers: 
@@ -158,15 +158,15 @@ def set_openvpn_servers(node, openvpn, json_data):
             files_to_copy = []
 
             # Base data
-            server_name = get_value_if_exists(server,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_NAME)
-            server_dev_name = get_value_if_exists(server,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_DEV_NAME)
-            server_dev_type = get_value_if_exists(server,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_DEV_TYPE)
-            server_ip = get_value_if_exists(server,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_IP)
+            server_name = get_key_if_exists(server,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_NAME)
+            server_dev_name = get_key_if_exists(server,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_DEV_NAME)
+            server_dev_type = get_key_if_exists(server,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_DEV_TYPE)
+            server_ip = get_key_if_exists(server,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_IP)
             if not server_ip:
-                server_ip = get_value_if_exists(node,KEY_NODES_NODE_IP)
+                server_ip = get_key_if_exists(node,KEY_NODES_NODE_IP)
 
-            server_port = get_value_if_exists(server,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_PORT)
-            server_proto = get_value_if_exists(server,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_PROTO)
+            server_port = get_key_if_exists(server,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_PORT)
+            server_proto = get_key_if_exists(server,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_PROTO)
             
             data_to_file.append("local {}".format(server_ip))
             data_to_file.append("port {}".format(server_port))
@@ -174,38 +174,36 @@ def set_openvpn_servers(node, openvpn, json_data):
             data_to_file.append("dev {}".format(server_dev_name))
             
             # Bridge data
-            server_server_bridge = get_value_if_exists(server,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_BRIDGE)
-            server_server_bridge_ip = get_value_if_exists(server_server_bridge,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_BRIDGE_IP)
-            server_server_bridge_mask = get_value_if_exists(server_server_bridge,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_BRIDGE_MASK)
-            server_server_bridge_ip_min = get_value_if_exists(server_server_bridge,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_BRIDGE_IP_MIN)
-            server_server_bridge_ip_max = get_value_if_exists(server_server_bridge,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_BRIDGE_IP_MAX)
+            server_server_bridge = get_key_if_exists(server,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_BRIDGE)
+            server_server_bridge_ip = get_key_if_exists(server_server_bridge,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_BRIDGE_IP)
+            server_server_bridge_mask = get_key_if_exists(server_server_bridge,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_BRIDGE_MASK)
+            server_server_bridge_ip_min = get_key_if_exists(server_server_bridge,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_BRIDGE_IP_MIN)
+            server_server_bridge_ip_max = get_key_if_exists(server_server_bridge,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_BRIDGE_IP_MAX)
             
             data_to_file.append("server-bridge {} {} {} {}".format(server_server_bridge_ip,
                 server_server_bridge_mask, server_server_bridge_ip_min, server_server_bridge_ip_max))
             
             # Files
-            server_data = get_value_if_exists(server,"server")
-            if server_data:
-                server_files = get_value_if_exists(json_data, server_data)
-                if server_files and isinstance(server_files, list):
-                    for file in server_files:
-                        server_file_key = get_value_if_exists(file,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_FILES_KEY)
-                        server_file_file_name = get_value_if_exists(file,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_FILES_FILE)
-                        server_file_file_dir = get_value_if_exists(file,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_FILES_FILE_DIR)
-                        
-                        if server_file_key:
-                            data_to_file.append("{} {}_{}".format(server_file_key, server_name, server_file_file_name))
+            server_files = get_key_if_exists(server,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_FILES)
+            if server_files and isinstance(server_files, list):
+                for file in server_files:
+                    server_file_key = get_key_if_exists(file,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_FILES_KEY)
+                    server_file_file_name = get_key_if_exists(file,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_FILES_FILE)
+                    server_file_file_dir = get_key_if_exists(file,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_FILES_FILE_DIR)
+                    
+                    if server_file_key:
+                        data_to_file.append("{} {}_{}".format(server_file_key, server_name, server_file_file_name))
 
-                        if server_file_file_dir:  
-                            files_to_copy.append((server_file_file_dir, "{}_{}".format(server_name, server_file_file_name)))
+                    if server_file_file_dir:  
+                        files_to_copy.append((server_file_file_dir, "{}_{}".format(server_name, server_file_file_name)))
 
-                for files in files_to_copy:
-                    copy_file(files[0], "{}/{}/{}".format(OPENVPN_PATH, OPENVPN_SERVER_DIR, files[1]))
+            for files in files_to_copy:
+                copy_file(files[0], "{}/{}/{}".format(OPENVPN_PATH, OPENVPN_SERVER_DIR, files[1]))
                 
 
             # Configuration
-            server_base_conf = get_value_if_exists(json_data,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_BASE_CONF)
-            server_push = get_value_if_exists(server,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_PUSH)
+            server_base_conf = get_key_if_exists(server,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_BASE_CONF)
+            server_push = get_key_if_exists(server,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_PUSH)
             
             server_file_path = "{}/{}/{}.conf".format(OPENVPN_PATH, OPENVPN_SERVER_DIR, server_name)
             
@@ -246,7 +244,7 @@ def get_json(filename):
     return json_data
 
 def get_nodes(json_data):
-    nodes = get_value_if_exists(json_data,KEY_NODES)
+    nodes = get_key_if_exists(json_data,KEY_NODES)
     return nodes
 
 def get_node(nodes, id):
@@ -258,7 +256,7 @@ def get_node(nodes, id):
 
 
 def get_openvpn_server(node, server_name):
-    openvpn = get_value_if_exists(node,KEY_NODES_NODE_OPENVPN)
+    openvpn = get_key_if_exists(node,KEY_NODES_NODE_OPENVPN)
     openvpn_server = None
     if openvpn:
         servers = openvpn[KEY_NODES_NODE_OPENVPN_SERVERS]
@@ -268,44 +266,41 @@ def get_openvpn_server(node, server_name):
                     openvpn_server = server
     return openvpn_server
 
-def get_client(server, client_id, json_data):
-    openvpn_server_clients_data = get_value_if_exists(server,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_CLIENTS)
+def get_client(server, client_id):
+    openvpn_server_clients = get_key_if_exists(server,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_CLIENTS)
     openvpn_server_client = None
-    if openvpn_server_clients_data:
-        openvpn_server_clients = get_value_if_exists(json_data, openvpn_server_clients_data)
-
-        if openvpn_server_clients and isinstance(openvpn_server_clients, list):
-            for client in openvpn_server_clients: 
-                if client and client[KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_CLIENTS_CLIENT_ID] == client_id:
-                    openvpn_server_client = client
+    if openvpn_server_clients and isinstance(openvpn_server_clients, list):
+        for client in openvpn_server_clients: 
+            if client and client[KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_CLIENTS_CLIENT_ID] == client_id:
+                openvpn_server_client = client
     return openvpn_server_client
 
-def generate_client_file(nodes, node_id, server_name, client_id, device_name, json_data, connect=True):
+def generate_client_file(nodes, node_id, server_name, client_id, device_name, connect=True):
     node = get_node(nodes, node_id)
     if node:
         server = get_openvpn_server(node,server_name)
         if server:
-            client = get_client(server, client_id, json_data)
+            client = get_client(server, client_id)
             if client:
 
                 data_to_file = []
                 files_to_write = []
 
                 # Base data
-                server_ip = get_value_if_exists(client,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_CLIENTS_CLIENT_IP)
+                server_ip = get_key_if_exists(client,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_CLIENTS_CLIENT_IP)
                 if not server_ip:
-                    server_ip = get_value_if_exists(server,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_IP)
+                    server_ip = get_key_if_exists(server,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_IP)
                     if not server_ip:
-                        server_ip = get_value_if_exists(node,KEY_NODES_NODE_IP)
+                        server_ip = get_key_if_exists(node,KEY_NODES_NODE_IP)
 
                 
-                server_port = get_value_if_exists(client,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_CLIENTS_CLIENT_PORT)
+                server_port = get_key_if_exists(client,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_CLIENTS_CLIENT_PORT)
                 if not server_port:
-                    server_port = get_value_if_exists(server,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_PORT)
+                    server_port = get_key_if_exists(server,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_PORT)
                 
-                client_proto = get_value_if_exists(server,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_PROTO)
-                client_files = get_value_if_exists(client,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_CLIENTS_CLIENT_FILES)
-                # = get_value_if_exists(client,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_DEV_NAME)
+                client_proto = get_key_if_exists(server,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_PROTO)
+                client_files = get_key_if_exists(client,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_CLIENTS_CLIENT_FILES)
+                # = get_key_if_exists(client,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_DEV_NAME)
 
                 data_to_file.append("client")
                 #data_to_file.append("dev {}".format(client_dev_name))
@@ -316,8 +311,8 @@ def generate_client_file(nodes, node_id, server_name, client_id, device_name, js
                 # Files
                 if client_files and isinstance(client_files, list):
                     for file in client_files:
-                        client_file_key = get_value_if_exists(file,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_FILES_KEY)
-                        client_file_file_dir = get_value_if_exists(file,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_FILES_FILE_DIR)
+                        client_file_key = get_key_if_exists(file,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_FILES_KEY)
+                        client_file_file_dir = get_key_if_exists(file,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_FILES_FILE_DIR)
                         
                         if client_file_file_dir and client_file_key:  
                             files_to_write.append((client_file_key, client_file_file_dir))
@@ -325,7 +320,7 @@ def generate_client_file(nodes, node_id, server_name, client_id, device_name, js
                 # Configuration
                 out_filename = "{}_{}_{}.ovpn".format(OPENVPN_BASIC_CIENT_NAME, server_name, client_id)
 
-                client_base_conf = get_value_if_exists(client,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_CLIENTS_CLIENT_BASE_CONF)
+                client_base_conf = get_key_if_exists(client,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_CLIENTS_CLIENT_BASE_CONF)
                 
                 if client_base_conf:
                     copy_file(client_base_conf, out_filename)
@@ -362,15 +357,15 @@ def generate_client_file(nodes, node_id, server_name, client_id, device_name, js
 
 
 
-def generate_clients_files_for_server(nodes, openvpn, json_data):
+def generate_clients_files_for_server(nodes, openvpn):
     clients = openvpn[KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_CLIENTS]
     if clients and isinstance(clients, list):
         for client in clients: 
-            node_id = get_value_if_exists(client,KEY_NODES_NODE_OPENVPN_CLIENTS_CLIENT_NODE_ID)
-            server_name = get_value_if_exists(client,KEY_NODES_NODE_OPENVPN_CLIENTS_CLIENT_SERVER_NAME)
-            client_id = get_value_if_exists(client,KEY_NODES_NODE_OPENVPN_CLIENTS_CLIENT_CLIENT_ID)
-            device_name = get_value_if_exists(client,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_DEV_NAME)
-            generate_client_file(nodes,node_id, server_name, client_id, device_name, json_data)
+            node_id = get_key_if_exists(client,KEY_NODES_NODE_OPENVPN_CLIENTS_CLIENT_NODE_ID)
+            server_name = get_key_if_exists(client,KEY_NODES_NODE_OPENVPN_CLIENTS_CLIENT_SERVER_NAME)
+            client_id = get_key_if_exists(client,KEY_NODES_NODE_OPENVPN_CLIENTS_CLIENT_CLIENT_ID)
+            device_name = get_key_if_exists(client,KEY_NODES_NODE_OPENVPN_SERVERS_SERVER_DEV_NAME)
+            generate_client_file(nodes,node_id, server_name, client_id, device_name)
          
 
 
@@ -395,13 +390,13 @@ if args.f:
 
 
 if json_data and (args.icp or args.isp):
-    install = get_value_if_exists(json_data,KEY_INSTALL)
+    install = get_key_if_exists(json_data,KEY_INSTALL)
     packages = None
     if args.icp and install:
-        packages = get_value_if_exists(install,KEY_INSTALL_CLIENT)
+        packages = get_key_if_exists(install,KEY_INSTALL_CLIENT)
 
     if args.isp and install:
-        packages = get_value_if_exists(install,KEY_INSTALL_SERVER)
+        packages = get_key_if_exists(install,KEY_INSTALL_SERVER)
 
     if packages:
         run_command("sudo apt install -y {}".format(packages))
@@ -411,15 +406,15 @@ if args.i and nodes:
     node = get_node(nodes, args.i)
 
 if args.s and node:
-    openvpn = get_value_if_exists(node,KEY_NODES_NODE_OPENVPN)
-    set_openvpn_servers(node, openvpn, json_data)
-    generate_clients_files_for_server(nodes, openvpn, json_data)
+    openvpn = get_key_if_exists(node,KEY_NODES_NODE_OPENVPN)
+    set_openvpn_servers(node, openvpn)
+    generate_clients_files_for_server(nodes, openvpn)
 
 if args.o and node:
-    openvswitch = get_value_if_exists(node,KEY_NODES_NODE_OPENVSWITCH)
+    openvswitch = get_key_if_exists(node,KEY_NODES_NODE_OPENVSWITCH)
     set_ovs_bridges(openvswitch)
 
 if args.c and json_data and len(args.c) > 2:
-     generate_client_file(get_nodes(json_data), int(args.c[0]), args.c[1], int(args.c[2]), args.c[3], json_data)
+     generate_client_file(get_nodes(json_data), int(args.c[0]), args.c[1], int(args.c[2]), args.c[3])
 
 
