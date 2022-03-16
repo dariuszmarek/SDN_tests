@@ -125,11 +125,11 @@ def set_ovs_bridges(openvswitch):
             ifconfig_set_nic_ip(br_name, br_ip, br_mask)
 
             run_command("sudo ovs-ofctl add-flow ovs-br priority=0,action=drop")
-            # if br_controller:
-            #     br_controller_type = get_value_if_exists(br_controller,KEY_NODES_NODE_OPENVSWITCH_BRIDGE_CONTROLLER_TYPE)
-            #     br_controller_ip = get_value_if_exists(br_controller,KEY_NODES_NODE_OPENVSWITCH_BRIDGE_CONTROLLER_IP)
-            #     br_controller_port = get_value_if_exists(br_controller,KEY_NODES_NODE_OPENVSWITCH_BRIDGE_CONTROLLER_PORT)
-            #     ovs_set_tcp_controller(br_name, br_controller_type, br_controller_ip, br_controller_port)
+            if br_controller:
+                br_controller_type = get_value_if_exists(br_controller,KEY_NODES_NODE_OPENVSWITCH_BRIDGE_CONTROLLER_TYPE)
+                br_controller_ip = get_value_if_exists(br_controller,KEY_NODES_NODE_OPENVSWITCH_BRIDGE_CONTROLLER_IP)
+                br_controller_port = get_value_if_exists(br_controller,KEY_NODES_NODE_OPENVSWITCH_BRIDGE_CONTROLLER_PORT)
+                ovs_set_tcp_controller(br_name, br_controller_type, br_controller_ip, br_controller_port)
             
             if br_networks and isinstance(br_networks, list):
                 for br_network in br_networks:
