@@ -567,6 +567,21 @@
                         "clients":"server-1-clients"
                     },
                     {
+                        "name": "tapssn3n6",
+                        "dev-name": "tapssn3n6",
+                        "dev-type": "tap",
+                        "port": 1196,
+                        "proto": "udp",
+                        "server-bridge": {
+                            "ip": "10.10.2.13",
+                            "mask": "255.255.255.0",
+                            "ip-min": "10.10.2.10",
+                            "ip-max": "10.10.2.30"
+                        },
+                        "server":"server-1-files",
+                        "clients":"server-1-clients"
+                    },
+                    {
                         "name": "tapcsnode3",
                         "dev-name": "tapcsnode3",
                         "dev-type": "tap",
@@ -614,6 +629,9 @@
                             },
                             {
                                 "name": "tapcsnode3"
+                            },
+                            {
+                                "name":"tapssn3n6"
                             }
                         ]
                     }
@@ -751,6 +769,21 @@
                 ],
                 "servers": [
                     {
+                        "name": "tapssn5n7",
+                        "dev-name": "tapssn5n7",
+                        "dev-type": "tap",
+                        "port": 1197,
+                        "proto": "udp",
+                        "server-bridge": {
+                            "ip": "10.10.2.15",
+                            "mask": "255.255.255.0",
+                            "ip-min": "10.10.2.10",
+                            "ip-max": "10.10.2.30"
+                        },
+                        "server":"server-1-files",
+                        "clients":"server-1-clients"
+                    },
+                    {
                         "name": "tapcsnode5",
                         "dev-name": "tapcsnode5",
                         "dev-type": "tap",
@@ -798,6 +831,9 @@
                             },
                             {
                                 "name": "tapcsnode5"
+                            },
+                            {
+                                "name": "tapssn5n7"
                             }
                            
                         ]
