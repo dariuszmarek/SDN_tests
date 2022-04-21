@@ -92,4 +92,4 @@ app.get("/arp/add/:ip/:address/:mac", (req, res, next) => {
 });
 
 
-app.use('/', proxy('container-onos-sdn-controller:8182/', ))
+app.use('/onos/v1/', proxy('container-onos-sdn-controller:8182/', ))
